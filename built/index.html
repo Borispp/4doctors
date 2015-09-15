@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Softevol</title>
+  <link href="assets/libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="assets/styles/main.css" rel="stylesheet" type="text/css">
+  <style>
+    .menu > li {
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <ul class="menu">
+      <li>
+        Name
+        <ul class="sub_menu">
+          <li>Boris</li>
+          <li>My name</li>
+        </ul>
+      </li>
+      <li>Test</li>
+    </ul>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12 customers">
+          <div class="customers_list">
+          </div>
+          <footer>
+            <button type="button" class="btn btn-success customer--add">Add New Customer</button>
+            <button type="button" class="btn btn-success customers--save">Save</button> <span class="m-gray">(show current collection in console.log)</span>
+          </footer>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script data-main="assets/scripts/main.js" src="assets/libs/requirejs-plugins/lib/require.js"></script>
+</body>
+</html>
