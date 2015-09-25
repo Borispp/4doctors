@@ -1,0 +1,251 @@
+.menu
+	background url('../images/svg/menu.svg')
+	display inline-block
+	size(28px 26px)
+
+.back
+	background url('../images/svg/arrow.svg')
+	display inline-block
+	size(13px 22px)
+
+.logo
+	background url('../images/svg/logo.svg')
+	display inline-block
+	size(88px 30px)
+
+.like
+	position relative
+	background url('../images/svg/like.svg')
+	display inline-block
+	size(27px 24px)
+
+.cart
+	position relative
+	background url('../images/svg/cart.svg')
+	display inline-block
+	size(30px 24px)
+
+.vk
+	position relative
+	background url('../images/svg/vk.svg')
+	display block
+	size(40px 40px)
+
+.fb
+	position relative
+	background url('../images/svg/fb.svg')
+	display block
+	size(40px 40px)
+
+.wa
+	position relative
+	background url('../images/svg/wa.svg')
+	display block
+	size(40px 40px)
+
+.increase
+	position relative
+	background url('../images/svg/increase.svg')
+	display block
+	size(40px 40px)
+
+.count
+	display inline-block
+	width 14px
+	height 14px
+	line-height 16px
+	font-size 11px
+	text-align center
+	background #f00
+	color #fff
+	radius(50%)
+	position absolute
+	top -7px
+	right -7px
+
+.check_radio
+	font-size 0px
+	> div
+		border-radius 4px
+		border 1px solid #9B9B9B
+		overflow hidden
+		display flex
+		flex-direction row
+		flex-wrap wrap
+		justify-content center
+		align-content flex-start
+		align-items center
+
+	p
+		display inline-block
+		margin-left -1px
+		border-left 1px solid #9B9B9B
+		flex-grow 1
+	  flex-shrink 0
+	  flex-basis 200px
+
+	input
+		position absolute
+		left -9999px
+		&:checked + label
+			background #000
+			color #fff
+
+	label
+		cursor pointer
+		display inline-block
+		font-weight 300
+		width 100%
+		text-align center
+		font-size 13px
+		padding 5px 12px 3px
+		line-height 20px
+		borderbox()
+
+.check_box
+	font-size 0px
+	margin-bottom -8px
+	input[type='checkbox']
+		position absolute
+		left -9999px
+
+		&:checked + label
+			background #000
+			border 1px solid #000
+			color #fff
+
+	p
+		display inline-block
+		padding 0 4px
+		margin-left -4px
+		margin-bottom 8px
+
+	label
+		display inline-block
+		cursor pointer
+		font-size 12px
+		text-transform uppercase
+		border 1px solid #979797
+		width 32px
+		height 32px
+		text-align center
+		line-height 34px
+
+.checkbox_list
+	text-align left
+
+	label
+		display block
+		border-top 1px solid #B2AFAF
+		padding 11px 0 9px
+		font-size 13px
+		font-weight 300
+	input[type='checkbox']
+		position absolute
+		left -9999px
+
+		&:checked + label
+			color #F5A623
+			font-weight 500
+			&:after
+				content ''
+				float right
+				margin-right 6px
+				display inline-block
+				background url('../images/svg/checkmark.svg')
+				size(15px 12px)
+
+.product_like
+	display block
+	background url('../images/svg/like_empty.svg')
+	size(32px 32px)
+
+.button--gray
+	font-size 16px
+	font-weight 500
+	text-transform uppercase
+	text-decoration none
+	text-align center
+	padding 14px 18px 12px
+	border 2px solid #000
+	color #000
+
+.button--orange
+	background #fff
+	borderbox()
+
+	a
+		display block
+		width 100%
+		height 48px
+		line-height 52px
+		text-align center
+		color #fff
+		font-size 16px
+		text-transform uppercase
+		text-decoration none
+		font-weight 500
+		background #F5A623
+		borderbox()
+
+	&.m-green a
+		background #7ED321
+
+.radio
+	position relative
+	input
+		position absolute
+		left -9999px
+		&:checked + label span.radio_circ
+			border 1px solid #B06E00
+			&:before
+				content ''
+				position absolute
+				display block
+				width 10px
+				height 10px
+				border-radius 50%
+				background #F5A623
+				top 50%
+				left 50%
+				transform translate(-50%, -50%)
+	label
+		font-weight 300
+		cursor pointer
+		span.radio_circ
+			position relative
+			display block
+			width 14px
+			height 14px
+			border 1px solid #000
+			border-radius 50%
+
+.popup_like, .popup_dislike
+	position absolute
+	left 50%
+	top 50%
+	transform translate(-50%, -50%)
+	z-index 9999
+	width 123px
+	height 123px
+	background #fff
+	font-weight 500
+	color #000
+	font-size 14px
+	text-decoration none
+	text-align center
+	borderbox()
+	radius(8px)
+
+	&:before
+		content ''
+		display block
+		margin 14px auto
+
+.popup_like:before
+	background url('../images/svg/biglike.svg')
+	size(71px 64px)
+
+.popup_dislike:before
+	background url('../images/svg/bigdislike.svg')
+	size(71px 64px)

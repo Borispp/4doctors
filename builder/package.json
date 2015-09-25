@@ -28,14 +28,11 @@
     "test": "gulp"
   },
   "repository": {
-    "type": "git",
-    "url": "https://github.com/Krekotun/fabium.git"
+    "type": "git"
   },
   "keywords": [
     "front-end",
     "gulp",
     "boilerplate"
-  ],
-  "author": "Krekotun",
-  "license": "ISC"
+  ]
 }

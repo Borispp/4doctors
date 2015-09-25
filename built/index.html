@@ -1,41 +1,558 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="app">
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <meta charset="UTF-8">
-  <title>Softevol</title>
-  <link href="assets/libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <title>4Doctors</title>
   <link href="assets/styles/main.css" rel="stylesheet" type="text/css">
-  <style>
-    .menu > li {
-      display: inline-block;
-    }
-  </style>
 </head>
+<!-- <body class="popup_active"> -->
 <body>
   <div class="wrapper">
-    <ul class="menu">
-      <li>
-        Name
-        <ul class="sub_menu">
-          <li>Boris</li>
-          <li>My name</li>
-        </ul>
-      </li>
-      <li>Test</li>
-    </ul>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-12 customers">
-          <div class="customers_list">
+    <header id="main_header">
+      <a href="#" class="nav_open menu" data-open=".main_menu"></a>
+      <a href="#" class="back m-hide"></a>
+      <a href="#" class="cancel m-hide">Отменить</a>
+      <div class="main_headline">
+        <a href="http://4doctors/built/index.html" class="logo"></a>
+        <h1 class="m-hide">Топы</h1>
+      </div>
+      <a href="#" class="apply m-hide">Применить</a>
+      <a href="#cart" class="cart "><span class="count">2</span></a>
+      <a href="#like" class="like "></a>
+    </header>
+    <div id="main_content">
+      <div class="fav m-hide">
+        <p class="fav--description">Вы можете отметить любую товар<br> из каталог в список понравившихся<br> Для этого, воспользуйтесь иконкой<br> рядом с товаром. <br> <span class="product_like"></span></p>
+        <a href="#" class="button--gray">Вернуться в каталог</a>
+      </div>
+      <div class="checkout m-hide">
+        <form action="" class="form">
+          <fieldset class="order_steps">
+            <p class="fake_placeholder"><input type="email" id="checkoutMail" ><label for="checkoutMail">Электронная почта</label></p>
+            <p class="fake_placeholder"><input type="test" id="checkoutPhone" ><label for="checkoutPhone">Номер мобильного телефона</label></p>
+            <p class="fake_placeholder"><input type="test" id="checkoutName" ><label for="checkoutName">Имя и Фамилия</label></p>
+          </fieldset>
+          <fieldset class="order_steps">
+            <p>
+              <select name="checkoutCountry" id="checkoutCountry" class="fake_select">
+                <option value="1">Россия</option>
+                <option value="2">Молдова</option>
+                <option value="3">Германия</option>
+              </select>
+              <label for="checkoutCountry" class="select_label"><span>Страна</span> <strong class="select_label--result"></strong></label>
+            </p>
+            <p>
+              <select name="checkoutCity" id="checkoutCity" class="fake_select">
+                <option value="">Ашхабад</option>
+                <option value="">Лемберг</option>
+                <option value="">Константинополь</option>
+              </select>
+              <label for="checkoutCity" class="select_label"><span>Город</span> <strong class="select_label--result"></strong></label>
+            </p>
+            <p><a href="#" class="button--gray">Продолжить</a></p>
+            <p class="button--orange"><a href="#">Продолжить</a></p>
+          </fieldset>
+          <fieldset class="order_steps select_types">
+            <div class="select_types--wrap">
+              <p class="radio">
+                <input type="radio" name="delivery" id="pickup">
+                <label for="pickup">
+                  <span class="radio_circ"></span>
+                  <strong>Самовывоз — 0 руб.</strong>
+                  <span>Москва, метро Кропоткинская,<br> Болотная набережная 7/3 <br>шоурум 4doctors</span>
+                </label>
+              </p>
+
+              <p class="radio">
+                <input type="radio" name="delivery" id="courier">
+                <label for="courier">
+                  <span class="radio_circ"></span>
+                  <strong>Курьером — 300 руб.</strong>
+                  <span>по Москве в рабочие дни <br> с 10:00 до 18:00</span>
+                </label>
+              </p>
+            </div>
+          </fieldset>
+
+          <fieldset class="order_steps comments">
+            <p class="fake_placeholder">
+              <textarea name="" id="" cols="30" rows="6" id="orderComments"></textarea>
+              <label for="orderComments">Улица, дом, кв, комментарии</label>
+            </p>
+
+            <p><a href="#" class="button--gray">Продолжить</a></p>
+          </fieldset>
+
+          <fieldset class="order_steps select_types">
+            <div class="select_types--wrap">
+              <p class="radio">
+                <input type="radio" name="payment" id="bankCard">
+                <label for="bankCard">
+                  <span class="radio_circ"></span>
+                  <strong>Банковской картой</strong>
+                  <span>VISA или MasterCard</span>
+                </label>
+              </p>
+              <p class="radio">
+                <input type="radio" name="payment" id="cash">
+                <label for="cash">
+                  <span class="radio_circ"></span>
+                  <strong>Наличными курьеру</strong>
+                  <span>При получении заказа</span>
+                </label>
+              </p>
+              <p class="radio">
+                <input type="radio" name="payment" id="euroseti">
+                <label for="euroseti">
+                  <span class="radio_circ"></span>
+                  <strong>Через Евросеть / Связной</strong>
+                  <span>Оплата в любом салоне <br> сети Евросеть или Связной</span>
+                </label>
+              </p>
+              <p class="radio">
+                <input type="radio" name="payment" id="sberbank">
+                <label for="sberbank">
+                  <span class="radio_circ"></span>
+                  <strong>Квитанцией Сбербанк</strong>
+                  <span>Оплата в любом доступном <br>офисе Сбербанк</span>
+                </label>
+              </p>
+            </div>
+          </fieldset>
+
+          <fieldset class="user_cart--items" style="padding-bottom: 0;">
+            <div class="user_cart--item">
+              <div class="user_cart--image"><img src="./assets/images/content/img1.png" alt=""></div>
+              <div class="user_cart--description">
+                <p>Женский топ: 64743 </p>
+                <p>Цвет: Белый</p>
+                <p> Размер: 42/44</p>
+                <p class="user_cart--price">1 500 руб x <span class="user_cart--count_multiply">2</span> шт <span class="user_cart--count_price">= <span>1500</span> руб</span></p>
+              </div>
+            </div>
+            <div class="user_cart--item">
+              <div class="user_cart--image"><img src="./assets/images/content/img1.png" alt=""></div>
+              <div class="user_cart--description">
+                <p>Женский топ: 64743 </p>
+                <p>Цвет: Белый</p>
+                <p> Размер: 42/44</p>
+                <p class="user_cart--price">1 500 руб x <span class="user_cart--count_multiply">2</span> шт <span class="user_cart--count_price">= <span>1500</span> руб</span></p>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="delivery_courier_type">
+            <p>
+              <span class="delivery_courier">Доставка курьером:</span> <span class="delivery_courier--right">= 300 руб</span>
+            </p>
+            <p class="m-bold">
+              <span class="delivery_courier m-dashed">Оплата наличными курьеру:</span> <span class="delivery_courier--right m-final">6000 руб</span>
+            </p>
+
+            <!-- <p class="button--orange m-green"><a href="#">Перейти к оплате</a></p> -->
+          </fieldset>
+
+          <fieldset>
+            <p class="fake_placeholder">
+              <input type="text" name="cardNumber" id="cardNumber" value="">
+              <label for="cardNumber">Номер карты</label>
+            </p>
+            <div class="info_input">
+              <p class="expiration">
+                <span class="input_headline">Срок годности</span>
+                <input type="text" name="expirationMonth" value="" placeholder="ММ">
+                <input type="text" name="expirationYear" value="" placeholder="ГГ">
+              </p>
+              <p class="cvv">
+                <span class="input_headline">CVV/CVC</span>
+                <input type="text" name="expirationDate" value="">
+              </p>
+            </div>
+            <div class="info_input">
+              <p>
+                <span class="input_headline">Как на карте</span>
+                <input type="text" name="expirationDate" value="" placeholder="Держатель карты">
+              </p>
+            </div>
+            <p><a href="#" class="button--gray">Оплатить <span class="pay_count">6000</span> <span class="m-tt_none">руб</span></a></p>
+          </fieldset>
+        </form>
+
+        <div class="checkout--info">
+          <p><span>Покупатель:</span> <strong class="checkout--name">Василий Петрович</strong></p>
+          <p><span>Эл. почта:</span> <strong class="checkout--mail">ivan@mail.ru</strong></p>
+          <p><span>Моб. телефон:</span> <strong class="checkout--phone">8 (985) 322-90-89</strong></p>
+          <p class="checkout--delivery_info">Доставка курьером от 2-х до 7-ми рабочих дней по адресу:  <strong>Россия, Москва ул. Крыжинапольского 14, кв 14, этаж 5, домофон 321  спросить Ивана</strong></p>
+        </div>
+      </div>
+      <div class="user_cart m-hide">
+        <div class="user_cart--item">
+          <div class="user_cart--image"><img src="./assets/images/content/img1.png" alt=""></div>
+          <div class="user_cart--description">
+            <p>Женский топ: 64743 </p>
+            <p>Цвет: Белый</p>
+            <p> Размер: 42/44</p>
+            <p> Цена: 1 500 руб</p>
+            <div class="user_cart--counter">
+              <a href="#" class="user_cart--decrease">&#45;</a>
+              <span class="user_cart--count">1</span>
+              <a href="#" class="user_cart--increase">&plus;</a>
+            </div>
           </div>
-          <footer>
-            <button type="button" class="btn btn-success customer--add">Add New Customer</button>
-            <button type="button" class="btn btn-success customers--save">Save</button> <span class="m-gray">(show current collection in console.log)</span>
-          </footer>
+        </div>
+        <div class="user_cart--item">
+          <div class="user_cart--image"><img src="./assets/images/content/img2.jpg" alt=""></div>
+          <div class="user_cart--description">
+            <p>Женский топ: 64743 </p>
+            <p>Цвет: Белый</p>
+            <p> Размер: 42/44</p>
+            <p> Цена: 1 500 руб</p>
+            <div class="user_cart--counter">
+              <a href="#" class="user_cart--decrease">&#45;</a>
+              <span class="user_cart--count">1</span>
+              <a href="#" class="user_cart--increase">&plus;</a>
+            </div>
+          </div>
+        </div>
+
+        <p class="user_cart--continue"><a href="#" class="button--gray">Продолжить покупки</a></p>
+        <p class="button--orange"><a href="#">Оформить заказ</a></p>
+      </div>
+      <div class="item_detail">
+        <div class="slide">
+          <div class="slide--social">
+            <a href="#" class="vk"></a>
+            <a href="#" class="wa"></a>
+            <a href="#" class="fb"></a>
+          </div>
+          <a href="#" class="increase"></a>
+
+          <div class="slide--wrapper">
+            <div class="slide--content">
+              <a href="#"><img src="./assets/images/content/img7.png" alt="" class="open_image"></a>
+              <a href="#"><img src="./assets/images/content/item.jpg" alt="" class="open_image"></a>
+              <a href="#"><img src="./assets/images/content/item2.jpg" alt="" class="open_image"></a>
+              <a href="#"><img src="./assets/images/content/item3.jpg" alt="" class="open_image"></a>
+              <a href="#"><img src="./assets/images/content/item4.jpg" alt="" class="open_image"></a>
+            </div>
+          </div>
+        </div>
+        <div class="item_detail--info">
+          <p>Брэнд: «Infinity by Cherokee»</p>
+          <p>Артикул: 84754C</p>
+          <p> Цена: <strong>2 100 руб</strong></p>
+          <a href="#" class="product_like"></a>
+        </div>
+
+        <form action="" class="item_detail--select">
+          <fieldset class="item_detail--colors select_color">
+            <h2><span>ЦВЕТ:</span> Выберите</h2>
+            <p>
+              <input type="radio" name="filterSelectColor" id="filterSelectViolet">
+              <label for="filterSelectViolet"><span></span></label>
+            </p>
+            <p>
+              <input type="radio" name="filterSelectColor" id="filterSelectGreen">
+              <label for="filterSelectGreen"><span></span></label>
+            </p>
+            <p>
+              <input type="radio" name="filterSelectColor" id="filterSelectBlue">
+              <label for="filterSelectBlue"><span></span></label>
+            </p>
+          </fieldset>
+          <fieldset class="item_detail--colors select_size">
+            <h2>РАЗМЕР: <a href="#" class="active">RUS</a> | <a href="#">US</a></h2>
+            <p>
+              <input type="radio" name="filterSelectSize" id="filterSelect4042" disabled>
+              <label for="filterSelect4042">40/42</label>
+            </p>
+            <p>
+              <input type="radio" name="filterSelectSize" id="filterSelect4244">
+              <label for="filterSelect4244">42/44</label>
+            </p>
+            <p>
+              <input type="radio" name="filterSelectSize" id="filterSelect4446">
+              <label for="filterSelect4446">44/46</label>
+            </p>
+            <p>
+              <input type="radio" name="filterSelectSize" id="filterSelect4648" disabled>
+              <label for="filterSelect4648">46/48</label>
+            </p>
+            <p>
+              <input type="radio" name="filterSelectSize" id="filterSelect4850">
+              <label for="filterSelect4850">48/50</label>
+            </p>
+            <p>
+              <input type="radio" name="filterSelectSize" id="filterSelect5052">
+              <label for="filterSelect5052">50/52</label>
+            </p>
+            <p>
+              <input type="radio" name="filterSelectSize" id="filterSelect5254">
+              <label for="filterSelect5254">52/54</label>
+            </p>
+            <p>
+              <input type="radio" name="filterSelectSize" id="filterSelect5456">
+              <label for="filterSelect5456">54/56</label>
+            </p>
+          </fieldset>
+        </form>
+        <div class="content_description">
+          <h2>Описание</h2>
+          <p>Топ хирургический женский с округленным вырезом. Топ с рельефными швами спереди и двойной прострочкой швов.  Два накладных кармана спереди. Ткань обработана по технологии Certainty. </p>
+          <h2>Состав</h2>
+          <ul>
+            <li>70% хлопок</li>
+            <li>28% полиэстер</li>
+            <li>2% элистер</li>
+          </ul>
+        </div>
+      </div>
+      <div class="filter m-hide">
+        <span class="filter--count">35 позиций</span>
+        <a href="#" class="filter--controllers active">Сбросить</a>
+        <a href="#" class="filter--controllers">Фильтр</a>
+      </div>
+
+      <div class="products_list m-hide">
+        <div class="products_list--item">
+          <a href="#" class="products_list--like product_like"></a>
+          <p class="products_list--image"><img src="./assets/images/content/img1.png" alt=""></p>
+          <p class="products_list--price">1500 руб </p>
+          <p class="products_list--name">Cherokee 84754C</p>
+        </div>
+        <div class="products_list--item">
+          <a href="#" class="products_list--like product_like"></a>
+          <p class="products_list--image"><img src="./assets/images/content/img2.jpg" alt=""></p>
+          <p class="products_list--price">2100 руб </p>
+          <p class="products_list--name">Iguana 1929</p>
+        </div>
+        <div class="products_list--item">
+          <a href="#" class="products_list--like product_like"></a>
+          <p class="products_list--image"><img src="./assets/images/content/img3.jpg" alt=""></p>
+          <p class="products_list--price">2100 руб </p>
+          <p class="products_list--name">Iguana 1929</p>
+        </div>
+        <div class="products_list--item">
+          <a href="#" class="products_list--like product_like"></a>
+          <p class="products_list--image"><img src="./assets/images/content/img4.jpg" alt=""></p>
+          <p class="products_list--price">2100 руб </p>
+          <p class="products_list--name">Iguana 1929</p>
+        </div>
+        <div class="products_list--item">
+          <a href="#" class="products_list--like product_like"></a>
+          <p class="products_list--image"><img src="./assets/images/content/img5.png" alt=""></p>
+          <p class="products_list--price">2100 руб </p>
+          <p class="products_list--name">Iguana 1929</p>
+        </div>
+        <div class="products_list--item">
+          <a href="#" class="products_list--like product_like"></a>
+          <p class="products_list--image"><img src="./assets/images/content/img6.png" alt=""></p>
+          <p class="products_list--price">2100 руб </p>
+          <p class="products_list--name">Iguana 1929</p>
         </div>
       </div>
     </div>
+
+    <nav class="filter_menu m-hide">
+      <form action="" class="filter_settings">
+        <fieldset class="filter_settings--fast">
+          <p>
+            <input type="radio" name="filterSettingsFast" id="lowprice">
+            <label for="lowprice">Низкая цена<span></span></label>
+          </p>
+          <p>
+            <input type="radio" name="filterSettingsFast" id="allproducts" checked>
+            <label for="allproducts">Все товары<span></span></label>
+          </p>
+          <p>
+            <input type="radio" name="filterSettingsFast" id="highprice">
+            <label for="highprice">Высокая цена<span></span></label>
+          </p>
+        </fieldset>
+        <fieldset class="check_radio">
+          <div class="filter_settings--sex">
+            <p>
+              <input type="radio" name="filterSettingsSex" id="filterSettingsMen" checked>
+              <label for="filterSettingsMen">Мужское</label>
+            </p>
+            <p>
+              <input type="radio" name="filterSettingsSex" id="filterSettingsWomen">
+              <label for="filterSettingsWomen">Женское</label>
+            </p>
+            <p>
+              <input type="radio" name="filterSettingsSex" id="filterSettingsUnisex">
+              <label for="filterSettingsUnisex">Унисекс</label>
+            </p>
+          </div>
+        </fieldset>
+        <fieldset class="check_box">
+          <h2 class="filter_headline">Размер одежды: <a href="#">RUS</a> | <a href="#" class="active">US</a></h2>
+          <p>
+            <input type="checkbox" name="filterSettingsSize" id="filterSettingsXS">
+            <label for="filterSettingsXS">xs</label>
+          </p>
+          <p>
+            <input type="checkbox" name="filterSettingsSize" id="filterSettingsS">
+            <label for="filterSettingsS">s</label>
+          </p>
+          <p>
+            <input type="checkbox" name="filterSettingsSize" id="filterSettingsM">
+            <label for="filterSettingsM">m</label>
+          </p>
+          <p>
+            <input type="checkbox" name="filterSettingsSize" id="filterSettingsL">
+            <label for="filterSettingsL">l</label>
+          </p>
+          <p>
+            <input type="checkbox" name="filterSettingsSize" id="filterSettingsXL">
+            <label for="filterSettingsXL">XL</label>
+          </p>
+          <p>
+            <input type="checkbox" name="filterSettingsSize" id="filterSettings2XL">
+            <label for="filterSettings2XL">2XL</label>
+          </p>
+          <p>
+            <input type="checkbox" name="filterSettingsSize" id="filterSettings3XL">
+            <label for="filterSettings3XL">3XL</label>
+          </p>
+        </fieldset>
+        <fieldset class="check_box">
+          <h2 class="filter_headline">Размер обуви</h2>
+          <p>
+            <input type="checkbox" name="filterSettingsShoesSize" id="filterSettings36">
+            <label for="filterSettings36">36</label>
+          </p>
+          <p>
+            <input type="checkbox" name="filterSettingsShoesSize" id="filterSettings37">
+            <label for="filterSettings37">37</label>
+          </p>
+          <p>
+            <input type="checkbox" name="filterSettingsShoesSize" id="filterSettings38">
+            <label for="filterSettings38">38</label>
+          </p>
+          <p>
+            <input type="checkbox" name="filterSettingsShoesSize" id="filterSettings39">
+            <label for="filterSettings39">39</label>
+          </p>
+          <p>
+            <input type="checkbox" name="filterSettingsShoesSize" id="filterSettings40">
+            <label for="filterSettings40">40</label>
+          </p>
+          <p>
+            <input type="checkbox" name="filterSettingsShoesSize" id="filterSettings41">
+            <label for="filterSettings41">41</label>
+          </p>
+          <p>
+            <input type="checkbox" name="filterSettingsShoesSize" id="filterSettings42">
+            <label for="filterSettings42">42</label>
+          </p>
+          <p>
+            <input type="checkbox" name="filterSettingsShoesSize" id="filterSettings43">
+            <label for="filterSettings43">43</label>
+          </p>
+          <p>
+            <input type="checkbox" name="filterSettingsShoesSize" id="filterSettings44">
+            <label for="filterSettings44">44</label>
+          </p>
+          <p>
+            <input type="checkbox" name="filterSettingsShoesSize" id="filterSettings45">
+            <label for="filterSettings45">45</label>
+          </p>
+          <p>
+            <input type="checkbox" name="filterSettingsShoesSize" id="filterSettings46">
+            <label for="filterSettings46">46</label>
+          </p>
+        </fieldset>
+        <fieldset class="checkbox_list">
+          <h2 class="filter_headline">Бренды</h2>
+          <p>
+            <input type="checkbox" name="filterSettingsBrands" id="filterSettingsCherokee">
+            <label for="filterSettingsCherokee">Cherokee</label>
+          </p>
+          <p>
+            <input type="checkbox" name="filterSettingsBrands" id="filterSettingsDickies">
+            <label for="filterSettingsDickies">Dickies</label>
+          </p>
+          <p>
+            <input type="checkbox" name="filterSettingsBrands" id="filterSettingsRunway">
+            <label for="filterSettingsRunway">Runway</label>
+          </p>
+          <p>
+            <input type="checkbox" name="filterSettingsBrands" id="filterSettingsHeartsoul">
+            <label for="filterSettingsHeartsoul">Heartsoul</label>
+          </p>
+          <p>
+            <input type="checkbox" name="filterSettingsBrands" id="filterSettingsInfinity">
+            <label for="filterSettingsInfinity">Infinity</label>
+          </p>
+          <p>
+            <input type="checkbox" name="filterSettingsBrands" id="filterSettingsCodehappy">
+            <label for="filterSettingsCodehappy">Code Happy</label>
+          </p>
+          <p>
+            <input type="checkbox" name="filterSettingsBrands" id="filterSettingsCertanity">
+            <label for="filterSettingsCertanity">Certanity</label>
+          </p>
+        </fieldset>
+      </form>
+    </nav>
+    <nav class="main_menu hide_from_top">
+      <p>
+        <a href="#" class="main_menu--tops"><span>Топы</span> <span class="main_menu--count">567 позиций</span></a>
+        <a href="#" class="main_menu--pants"><span>Брюки</span> <span class="main_menu--count">120 позиций</span></a>
+        <a href="#" class="main_menu--bathrobe"><span>Халаты</span> <span class="main_menu--count">90 позиций</span></a>
+        <a href="#" class="main_menu--accessories"><span>Аксессуары</span> <span class="main_menu--count">20 позиций</span></a>
+        <a href="#" class="main_menu--cap"><span>Шапочки</span> <span class="main_menu--count">90 позиций</span></a>
+        <a href="#" class="main_menu--shoes"><span>Обувь</span> <span class="main_menu--count">20 позиций</span></a>
+      </p>
+
+      <p><a href="#" class="main_menu--sales popup_open" data-open=".subscribe">Скидки &amp; акции</a></p>
+    </nav>
+
+    <div id="overlay m-hide"></div>
+    <div class="popup subscribe m-hide">
+      <div class="promo">20% OFF</div>
+      <h2>Скидки &amp; акции</h2>
+      <p>Подпишитесь на рассылку  <br>и будьте всегда в курсе новинок, <br>скидок и акций.</p>
+      <form action="" class="form">
+        <p class="fake_placeholder">
+          <input type="text" name="cardNumber" id="cardNumber" value="">
+          <label for="cardNumber">Электронная почта</label>
+        </p>
+        <p class="subscribe--submit_buttons">
+          <a href="#">Я женщина</a>
+          <a href="#">Я мужчина</a>
+        </p>
+      </form>
+      <a href="#" class="popup_close"></a>
+    </div>
+
+    <div class="popup popup_image m-hide">
+      <div class="popup_image--container"></div>
+      <a href="#" class="popup_close"></a>
+    </div>
+    <a href="#" class="popup_dislike m-hide">Как-то не очень</a>
+
+    <div ng-controller="MainCtrl" class="m-hide">
+      <aside style="width: 100px; float: left; display: block;">
+        <ul class="nav">
+          <li ng-repeat="category in categories" ng-class="{'active':isCurrent(category)}">
+            <a href="#{{category.id}}" ng-bind="category.name" ng-click="setCurrentCategory(category)"></a>
+          </li>
+        </ul>
+      </aside>
+      <div style="width: 400px; float: left;">
+        <p ng-repeat="mark in marks | filter:{category:currentCategory.name}" ng-bind='mark.title'></p>
+      </div>
+    </div>
   </div>
-  <script data-main="assets/scripts/main.js" src="assets/libs/requirejs-plugins/lib/require.js"></script>
+  <script src="assets/libs/jquery/dist/jquery.min.js"></script>
+  <script src="assets/libs/df-visible/jquery.visible.min.js"></script>
+  <script src="assets/scripts/visual/main.js"></script>
+
+  <script src="assets/libs/angular/angular.js"></script>
+  <script src="assets/libs/underscore/underscore-min.js"></script>
+  <script src="assets/scripts/main.js"></script>
 </body>
 </html>

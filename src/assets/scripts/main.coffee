@@ -1,29 +1,34 @@
-require.config
-  baseUrl: 'assets/scripts'
-  paths:
-    jquery:
-      '../libs/jquery/dist/jquery.min'
-    underscore:
-      '../libs/underscore/underscore-min'
-    backbone:
-      '../libs/backbone/backbone-min'
-    validation:
-      '../libs/backbone.validation/dist/backbone-validation-min'
-    'bootstrap':
-      '../libs/bootstrap/dist/js/bootstrap.min'
-    handlebars:
-      '../libs/handlebars/handlebars.min'
-    text:
-      '../libs/requirejs-plugins/lib/text'
+angular.module('app', [
+  'app.customers'
+  ])
 
-  shim:
-    'bootstrap':
-      deps: ['jquery']
 
-require [
-  'jquery'
-  'bootstrap'
-], () ->
+angular.module('app.customers', [])
 
-require ['./app/customers/base'], (Customers) ->
-  return
+
+class CustomersController
+  constructor: (@$scope) ->
+    @$scope.categories = [
+      {'id': 0, name: 'Main'},
+      {'id': 1, name: 'Boris'},
+      {'id': 2, name: 'Alex'}
+    ]
+    @$scope.marks = [
+      {'id': 0, 'title': 'Main bookmark', 'category': 'Main'}
+      {'id': 1, 'title': 'Boris bookmark', 'category': 'Boris'}
+      {'id': 2, 'title': 'Alex bookmark', 'category': 'Alex'}
+    ]
+    @$scope.currentCategory = null
+    @$scope.setCurrentCategory = @setCurrentCategory
+    @$scope.isCurrent = @isCurrent
+
+
+  setCurrentCategory: (category) =>
+    @$scope.currentCategory = category
+    console.log @$scope.currentCategory.name
+
+  isCurrent: (category) =>
+    return @$scope.currentCategory != null && category.name == @$scope.currentCategory.name
+
+angular.module('app.customers')
+  .controller 'MainCtrl', CustomersController

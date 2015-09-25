@@ -1,0 +1,133 @@
+.checkout
+	width 100%
+	text-align center
+	padding-bottom 19px
+	borderbox()
+
+	input
+		width 100%
+		borderbox()
+
+	.form
+
+		fieldset
+			display inline-block
+			background #F8F8F8
+			width 100%
+			padding 18px 40px 80px
+			borderbox()
+			shadow(0px 2px 4px 0px rgba(0,0,0,0.3))
+
+			&.select_types
+				background #fff
+			&.user_cart--items
+				background #fff
+				line-height 16px
+				padding-left 6px
+				p
+					margin-top 2px !important
+
+			&.delivery_courier_type
+				padding-left 15px
+				padding-bottom 8px
+				p
+					margin 0 auto
+					width 310px
+					display block
+					overflow hidden
+					font-size 14px
+					line-height 22px
+
+				.button--orange
+					position fixed
+					width 100%
+					left 0
+					bottom 0
+					border-top 1px solid #E5E2E2
+					padding 4px
+
+			.delivery_courier
+				float left
+				display inline-block
+				text-align right
+				width 215px
+
+				&.m-dashed
+					border-top 2px dashed #000
+					padding-top 6px
+					margin-top 6px
+
+			.delivery_courier--right
+				float left
+				display inline-block
+				padding-left 12px
+				&.m-final
+					padding-top 15px
+
+			.select_types--wrap
+				width 220px
+				padding-left 36px
+				margin 0 auto
+
+			.user_cart--item
+				width 320px
+				padding-bottom 0
+				&:last-child
+					.user_cart--description
+						border-bottom none
+
+			.user_cart--description
+				padding-bottom 18px
+				border-bottom 1px solid #9B9B9B
+			.user_cart--count_price
+				float right
+
+	&--info
+		text-align left
+		display inline-block
+		margin 18px auto 0
+
+		span
+			display inline-block
+			width 100px
+			text-align right
+			font-weight 300
+			margin-right 12px
+		strong
+			font-weight 400
+
+		.checkout--delivery_info
+			padding 15px 0 60px 0
+			width 230px
+			text-align center
+			strong
+				display block
+				font-weight 500
+
+	.button--orange, .button--gray
+		margin-top 36px
+
+	.order_steps
+		display block
+		&.select_types
+			margin 0 auto
+			padding-top 24px
+			text-align left
+
+			p
+				margin-bottom 15px
+
+			.radio_circ
+				position absolute
+				margin-left -36px
+
+			strong
+				font-size 15px
+				color #4A4A4A
+				display block
+				font-weight 500
+				margin-bottom 2px
+			span
+				color #4A4A4A
+				font-size 13px
+				line-height 18px

@@ -6,6 +6,7 @@
 fs = require 'fs'
 yaml = require 'js-yaml'
 pngcrush = require 'imagemin-pngcrush'
+svgSprite = require 'gulp-svg-sprites'
 
 # gulp modules
 gulp = require 'gulp'
@@ -57,6 +58,9 @@ gulp.task 'sprite', ->
     spriteData.css.pipe(gulp.dest(config.paths.src.sprites.style)); # путь, куда сохраняем стили
 
     return
+
+gulp.task 'sprites', ->
+  gulp.src('../src/assets/svg/*.svg').pipe(svgSprite()).pipe gulp.dest('assets')
 
 # Компиляция coffee в js
 gulp.task 'coffee', ->

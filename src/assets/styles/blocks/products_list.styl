@@ -1,0 +1,37 @@
+.products_list
+	text-align center
+	&--item
+		display inline-block
+		width 150px
+		position relative
+		line-height 17px
+		margin-top 12px
+		vertical-align top
+		borderbox()
+
+	&--image
+		margin-bottom 4px
+		width 150px
+		height 170px
+		display flex
+		flex-direction row
+		flex-wrap wrap
+		justify-content center
+		align-content flex-start
+		align-items center
+
+	&--price
+		font-size 14px
+		font-weight bold
+	&--name
+		font-size 13px
+		font-weight 300
+	&--like
+		position absolute
+		top 0
+		right 0
+		opacity 0.35
+		
+		&:hover
+			background url('../images/svg/like_active.svg')
+			opacity 1

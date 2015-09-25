@@ -1,10 +1,6 @@
 {
   "name": "fabium",
   "version": "0.0.1",
-  "homepage": "https://github.com/Krekotun/fabium",
-  "authors": [
-    "Krekotun <a.krekotun@gmail.com>"
-  ],
   "description": "fabium bower",
   "main": "gulpfile.js",
   "keywords": [
@@ -23,8 +19,8 @@
     "requirejs-plugin-bower": "*",
     "bootstrap": "~3.3.5",
     "underscore": "~1.8.3",
-    "backbone": "~1.2.3",
-    "backbone.validation": "~0.7.1"
+    "angular": "~1.4.6",
+    "df-visible": "customd/jquery-visible#~1.2.0"
   },
   "devDependencies": {
     "jquery": "~2.1.3"

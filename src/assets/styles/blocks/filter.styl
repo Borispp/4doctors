@@ -1,0 +1,95 @@
+.filter
+	background #F8F8F8
+	color #000
+	height 40px
+	line-height 40px
+	padding 0 14px
+	border-bottom 1px solid #9B9B9B
+	font-size 0
+	borderbox()
+	clearfix()
+
+	.filter--count
+		font-size 13px
+		font-weight 300
+
+	.filter--controllers
+		float right
+		display inline-block
+		line-height 14px
+		color #000
+		border 1px solid #000
+		text-decoration none
+		border-radius 3px
+		margin 7px 0 0 8px
+		padding 6px 15px 3px
+		font-size 13px
+		font-weight 300
+
+		&.active
+			background #F5A623
+			border 1px solid #F5A623
+			color #fff
+
+.filter_settings
+	text-align center
+	padding 0 0 15px
+	margin 0 14px
+	borderbox()
+
+	fieldset
+		margin-top 18px
+
+	.check_box, .check_radio
+		text-align left
+
+	.filter_headline
+		color #000
+		font-weight 500
+		display block
+		font-size 13px
+		margin-bottom 8px
+		a
+			color #000
+			font-weight 300
+			&.active
+				text-decoration none
+				font-weight 500
+
+	.filter_settings--fast
+		border-bottom 1px solid #000
+		padding-bottom 16px
+		p
+			display inline-block
+			padding 0 12px
+			font-size 14px
+
+			label
+				font-weight 300
+				cursor pointer
+				span
+					position relative
+					display block
+					margin 8px auto 0
+					width 14px
+					height 14px
+					border 1px solid #000
+					border-radius 50%
+
+		input[type='radio']
+			position absolute
+			left -9999px
+
+			&:checked + label span
+				border 1px solid #B06E00
+				&:before
+					content ''
+					position absolute
+					display block
+					width 10px
+					height 10px
+					border-radius 50%
+					background #F5A623
+					top 50%
+					left 50%
+					transform translate(-50%, -50%)
