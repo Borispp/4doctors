@@ -1,13 +1,20 @@
 class HeaderController
-	@$inject = ['$injector', '$scope', '$rootScope', '$stateParams', '$window']
+	@$inject = ['$injector', '$scope', '$rootScope', '$stateParams', '$window', '$state']
 
-	constructor: ($injector, @$scope, @$rootScope, @$stateParams, @$window) ->
+	constructor: ($injector, @$scope, @$rootScope, @$stateParams, @$window, @$state) ->
 		@likesService = $injector.get 'likesService'
 		@filterService = $injector.get 'filterService'
 		@cartService = $injector.get 'cartService'
 		@init()
 
 	init: ->
+		# Dirty hook for main page menu
+		if @$state.is('home')
+			angular.element('body').addClass('nav_active')
+			angular.element('.main_menu').removeClass('m-hide-left')
+		else
+			angular.element('body').removeClass('nav_active')
+			angular.element('.main_menu').addClass('m-hide-left')
 
 		@$scope.likesCount = => @likesService.likesLength()
 		@$scope.cartCount = => @cartService.cartLength()
