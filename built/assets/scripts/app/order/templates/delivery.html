@@ -1,0 +1,38 @@
+<div class="checkout">
+	<div class="error m-hide-top">
+		<p class="selectAll">Пожалуйста, выберите способ доставки</p>
+	</div>
+	<form action="" class="form">
+		<fieldset class="order_steps select_types">
+			<div class="select_types--wrap">
+				<p class="radio">
+					<input type="radio" name="delivery" id="deliverySelf" ng-model="customer.delivery" value="1">
+					<label for="deliverySelf">
+						<span class="radio_circ"></span>
+						<strong>Самовывоз — 0 руб.</strong>
+						<span>Москва, метро Кропоткинская,<br> Болотная набережная 7/3 <br>шоурум 4doctors</span>
+					</label>
+				</p>
+
+				<p class="radio">
+					<input type="radio" name="delivery" id="deliveryCourier" ng-model="customer.delivery" value="2">
+					<label for="deliveryCourier">
+						<span class="radio_circ"></span>
+						<strong>Курьером — 300 руб.</strong>
+						<span>по Москве в рабочие дни <br> с 10:00 до 18:00</span>
+					</label>
+				</p>
+			</div>
+
+			<p class="button--gray"><a  ng-click="ctrl.saveCustomer({'nextPage': 'address'})">Продолжить</a></p>
+		</fieldset>
+	</form>
+
+	<div class="checkout--info">
+		<p><span>Город:</span> <strong class="checkout--name">{{customer.city}}</strong></p>
+		<p><span>Страна:</span> <strong class="checkout--name">{{customer.country}}</strong></p>
+		<p><span>Покупатель:</span> <strong class="checkout--name">{{customer.name}}</strong></p>
+		<p><span>Эл. почта:</span> <strong class="checkout--mail">{{customer.email}}</strong></p>
+		<p><span>Моб. телефон:</span> <strong class="checkout--phone">{{customer.phone}}</strong></p>
+	</div>
+</div>

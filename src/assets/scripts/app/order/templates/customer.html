@@ -1,0 +1,13 @@
+<div class="checkout">
+	<div class="error m-hide-top">
+		<p class="selectAll">Пожалуйста, заполните все поля</p>
+	</div>
+	<form action="" class="form">
+		<fieldset class="order_steps">
+			<p class="fake_placeholder"><input type="email" id="checkoutMail" ng-model="customer.email"><label for="checkoutMail">Электронная почта</label></p>
+			<p class="fake_placeholder"><input type="test" id="checkoutPhone" ng-model="customer.phone"><label for="checkoutPhone">Номер мобильного телефона</label></p>
+			<p class="fake_placeholder"><input type="test" id="checkoutName" ng-model="customer.name"><label for="checkoutName">Имя и Фамилия</label></p>
+			<p><a ng-click="ctrl.saveCustomer({'nextPage': 'location'})" class="button--gray">Продолжить</a></p>
+		</fieldset>
+	</form>
+</div>

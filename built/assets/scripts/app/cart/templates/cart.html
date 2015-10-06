@@ -1,0 +1,19 @@
+<div class="user_cart">
+	<div class="user_cart--item" ng-repeat="products in cartProducts">
+		<div class="user_cart--image"><img ng-src="{{products.img}}" alt=""></div>
+		<div class="user_cart--description">
+			<p>{{products.name}}: {{products.articol}}</p>
+			<p>Цвет: {{products.color}}</p>
+			<p> Размер: {{products.size}}</p>
+			<p> Цена: {{products.price}} руб</p>
+			<div class="user_cart--counter">
+				<a class="user_cart--decrease" ng-click="ctrl.decrease(products.id)">&#45;</a>
+				<!-- <span class="user_cart--count" ng-model="products.count">1</span> -->
+				<input type="text" class="user_cart--count" ng-model="products.count" ng-value="products.count" ng-disabled="true">
+				<a class="user_cart--increase" ng-click="ctrl.increase(products.id)">&plus;</a>
+			</div>
+		</div>
+	</div>
+	<p class="user_cart--continue"><a ui-sref="home" class="button--gray">Продолжить покупки</a></p>
+	<p class="button--orange"><a ui-sref="customer" ng-click="ctrl.makeOrder()">Оформить заказ</a></p>
+</div>

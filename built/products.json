@@ -1,0 +1,158 @@
+[
+    {
+        "id": 1,
+        "name": "Cherokee",
+        "articol": "84754C",
+        "mainImageSrc": "./assets/images/content/img1.png",
+        "price": "1500",
+        "category": "tops",
+        "rusCategory": "Топы",
+        "allImages":
+          ["./assets/images/content/img7.png", "./assets/images/content/item.jpg", "./assets/images/content/item2.jpg", "./assets/images/content/item3.jpg", "./assets/images/content/item4.jpg"],
+        "description": "<p>Топ хирургический женский с округленным вырезом. Топ с рельефными швами спереди и двойной прострочкой швов.  Два накладных кармана спереди. Ткань обработана по технологии Certainty.</p>",
+        "composition": "<ul><li>70% хлопок</li><li>28% полиэстер</li><li>2% элистер</li></ul>",
+        "colors":
+          ["Violet", "Green", "Blue"],
+        "sizes":
+          [
+            {"select": "4042", "rusSize": "40/42", "usSize": "10", "available": true},
+            {"select": "4244", "rusSize": "42/44", "usSize": "12", "available": false},
+            {"select": "4446", "rusSize": "44/46", "usSize": "14", "available": true},
+            {"select": "4648", "rusSize": "46/48", "usSize": "16", "available": false},
+            {"select": "4850", "rusSize": "48/50", "usSize": "18", "available": true},
+            {"select": "5052", "rusSize": "50/52", "usSize": "20", "available": true},
+            {"select": "5254", "rusSize": "52/54", "usSize": "22", "available": false},
+            {"select": "5456", "rusSize": "54/56", "usSize": "24", "available": true}
+          ]
+    },
+    {
+        "id": 2,
+        "name": "Iguana",
+        "articol": "1929",
+        "mainImageSrc": "./assets/images/content/img2.jpg",
+        "price": "2100",
+        "category": "shoes",
+        "rusCategory": "Обувь",
+        "allImages":
+          ["./assets/images/content/i2.png", "./assets/images/content/item.jpg", "./assets/images/content/item2.jpg", "./assets/images/content/item3.jpg", "./assets/images/content/item4.jpg"],
+        "description": "<p>Топ хирургический женский с округленным вырезом. Топ с рельефными швами спереди и двойной прострочкой швов.  Два накладных кармана спереди. Ткань обработана по технологии Certainty.</p>",
+        "composition": "<ul><li>70% хлопок</li><li>28% полиэстер</li><li>2% элистер</li></ul>",
+        "colors":
+          ["Violet", "Green", "Blue"],
+        "sizes":
+          [
+            {"select": "4042", "rusSize": "40/42", "usSize": "10", "available": true},
+            {"select": "4244", "rusSize": "42/44", "usSize": "12", "available": false},
+            {"select": "4446", "rusSize": "44/46", "usSize": "14", "available": true},
+            {"select": "4648", "rusSize": "46/48", "usSize": "16", "available": false},
+            {"select": "4850", "rusSize": "48/50", "usSize": "18", "available": true},
+            {"select": "5052", "rusSize": "50/52", "usSize": "20", "available": true},
+            {"select": "5254", "rusSize": "52/54", "usSize": "22", "available": false},
+            {"select": "5456", "rusSize": "54/56", "usSize": "24", "available": true}
+          ]
+    },
+    {
+        "id": 3,
+        "name": "Iguana",
+        "articol": "333333",
+        "mainImageSrc": "./assets/images/content/img3.jpg",
+        "price": "100",
+        "category": "pants",
+        "rusCategory": "Брюки",
+        "allImages":
+          ["./assets/images/content/i3.png", "./assets/images/content/item.jpg", "./assets/images/content/item2.jpg", "./assets/images/content/item3.jpg", "./assets/images/content/item4.jpg"],
+        "description": "<p>Топ хирургический женский с округленным вырезом. Топ с рельефными швами спереди и двойной прострочкой швов.  Два накладных кармана спереди. Ткань обработана по технологии Certainty.</p>",
+        "composition": "<ul><li>70% хлопок</li><li>28% полиэстер</li><li>2% элистер</li></ul>",
+        "colors":
+          ["Violet", "Green", "Blue"],
+        "sizes":
+          [
+            {"select": "4042", "rusSize": "40/42", "usSize": "10", "available": true},
+            {"select": "4244", "rusSize": "42/44", "usSize": "12", "available": false},
+            {"select": "4446", "rusSize": "44/46", "usSize": "14", "available": true},
+            {"select": "4648", "rusSize": "46/48", "usSize": "16", "available": false},
+            {"select": "4850", "rusSize": "48/50", "usSize": "18", "available": true},
+            {"select": "5052", "rusSize": "50/52", "usSize": "20", "available": true},
+            {"select": "5254", "rusSize": "52/54", "usSize": "22", "available": false},
+            {"select": "5456", "rusSize": "54/56", "usSize": "24", "available": true}
+          ]
+    },
+    {
+        "id": 4,
+        "name": "Iguana",
+        "articol": "444444",
+        "mainImageSrc": "./assets/images/content/img4.jpg",
+        "price": "7100",
+        "category": "bathrobe",
+        "rusCategory": "Халаты",
+        "allImages":
+          ["./assets/images/content/i4.png", "./assets/images/content/item.jpg", "./assets/images/content/item2.jpg", "./assets/images/content/item3.jpg", "./assets/images/content/item4.jpg"],
+        "description": "<p>Топ хирургический женский с округленным вырезом. Топ с рельефными швами спереди и двойной прострочкой швов.  Два накладных кармана спереди. Ткань обработана по технологии Certainty.</p>",
+        "composition": "<ul><li>70% хлопок</li><li>28% полиэстер</li><li>2% элистер</li></ul>",
+        "colors":
+          ["Violet", "Green", "Blue"],
+        "sizes":
+          [
+            {"select": "4042", "rusSize": "40/42", "usSize": "10", "available": true},
+            {"select": "4244", "rusSize": "42/44", "usSize": "12", "available": false},
+            {"select": "4446", "rusSize": "44/46", "usSize": "14", "available": true},
+            {"select": "4648", "rusSize": "46/48", "usSize": "16", "available": false},
+            {"select": "4850", "rusSize": "48/50", "usSize": "18", "available": true},
+            {"select": "5052", "rusSize": "50/52", "usSize": "20", "available": true},
+            {"select": "5254", "rusSize": "52/54", "usSize": "22", "available": false},
+            {"select": "5456", "rusSize": "54/56", "usSize": "24", "available": true}
+          ]
+    },
+    {
+        "id": 5,
+        "name": "Iguana",
+        "articol": "555555",
+        "mainImageSrc": "./assets/images/content/img5.png",
+        "price": "5100",
+        "category": "accessories",
+        "rusCategory": "Аксессуары",
+        "allImages":
+          ["./assets/images/content/i5.png", "./assets/images/content/item.jpg", "./assets/images/content/item2.jpg", "./assets/images/content/item3.jpg", "./assets/images/content/item4.jpg"],
+        "description": "<p>Топ хирургический женский с округленным вырезом. Топ с рельефными швами спереди и двойной прострочкой швов.  Два накладных кармана спереди. Ткань обработана по технологии Certainty.</p>",
+        "composition": "<ul><li>70% хлопок</li><li>28% полиэстер</li><li>2% элистер</li></ul>",
+        "colors":
+          ["Violet", "Green", "Blue"],
+        "sizes":
+          [
+            {"select": "4042", "rusSize": "40/42", "usSize": "10", "available": true},
+            {"select": "4244", "rusSize": "42/44", "usSize": "12", "available": false},
+            {"select": "4446", "rusSize": "44/46", "usSize": "14", "available": true},
+            {"select": "4648", "rusSize": "46/48", "usSize": "16", "available": false},
+            {"select": "4850", "rusSize": "48/50", "usSize": "18", "available": true},
+            {"select": "5052", "rusSize": "50/52", "usSize": "20", "available": true},
+            {"select": "5254", "rusSize": "52/54", "usSize": "22", "available": false},
+            {"select": "5456", "rusSize": "54/56", "usSize": "24", "available": true}
+          ]
+    },
+    {
+        "id": 6,
+        "name": "Iguana",
+        "articol": "666666",
+        "mainImageSrc": "./assets/images/content/img6.png",
+        "price": "600",
+        "category": "cap",
+        "rusCategory": "Шапочки",
+        "allImages":
+          ["./assets/images/content/i6.png", "./assets/images/content/item.jpg", "./assets/images/content/item2.jpg", "./assets/images/content/item3.jpg", "./assets/images/content/item4.jpg"],
+        "description": "<p>Топ хирургический женский с округленным вырезом. Топ с рельефными швами спереди и двойной прострочкой швов.  Два накладных кармана спереди. Ткань обработана по технологии Certainty.</p>",
+        "composition": "<ul><li>70% хлопок</li><li>28% полиэстер</li><li>2% элистер</li></ul>",
+        "colors":
+          ["Violet", "Green", "Blue"],
+        "sizes":
+          [
+            {"select": "4042", "rusSize": "40/42", "usSize": "10", "available": true},
+            {"select": "4244", "rusSize": "42/44", "usSize": "12", "available": false},
+            {"select": "4446", "rusSize": "44/46", "usSize": "14", "available": true},
+            {"select": "4648", "rusSize": "46/48", "usSize": "16", "available": false},
+            {"select": "4850", "rusSize": "48/50", "usSize": "18", "available": true},
+            {"select": "5052", "rusSize": "50/52", "usSize": "20", "available": true},
+            {"select": "5254", "rusSize": "52/54", "usSize": "22", "available": false},
+            {"select": "5456", "rusSize": "54/56", "usSize": "24", "available": true}
+          ]
+    }
+]

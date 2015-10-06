@@ -1,0 +1,14 @@
+<div class="fav" ng-if="likesCount == 0">
+	<p class="fav--description">Вы можете отметить любую товар<br> из каталог в список понравившихся<br> Для этого, воспользуйтесь иконкой<br> рядом с товаром. <br> <span class="product_like"></span></p>
+	<a ui-sref="home" class="button--gray">Вернуться в каталог</a>
+</div>
+<div class="products_list">
+	<div class="products_list--item" ng-repeat="products in ctrl.products" ng-if="likes[products.id] == 'like_active'">
+		<a href="" class="products_list--like icon product_like" ng-click="ctrl.like(products.id)" ng-class="likes[products.id]? likes[products.id] : 'like_empty'"></a>
+		<a ui-sref="product({id:products.id})">
+			<p class="products_list--image"><img ng-src="{{products.mainImageSrc}}" alt=""></p>
+			<p class="products_list--price">{{products.price}} руб </p>
+			<p class="products_list--name">{{products.name}} {{products.articol}} ({{products.rusCategory}})</p>
+		</a>
+	</div>
+</div>

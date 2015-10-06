@@ -1,0 +1,35 @@
+<div class="checkout">
+	<form action="" class="form">
+		<fieldset class="user_cart--items" style="padding-bottom: 0;">
+			<div class="user_cart--item" ng-repeat="products in cartProducts">
+				<div class="user_cart--image"><img ng-src="{{products.img}}" alt=""></div>
+				<div class="user_cart--description">
+					<p>{{products.name}}: {{products.articol}}</p>
+					<p>Цвет: {{products.color}}</p>
+					<p> Размер: {{products.size}}</p>
+					<p class="user_cart--price">{{products.price}} x <span class="user_cart--count_multiply">{{products.count}}</span> шт <span class="user_cart--count_price">= <span ng-bind="products.price * products.count"></span> руб</span></p>
+				</div>
+			</div>
+		</fieldset>
+		<fieldset class="delivery_courier_type">
+			<p>
+				<span class="delivery_courier">Доставка курьером:</span> <span class="delivery_courier--right">= 300 руб</span>
+			</p>
+			<p class="m-bold">
+				<span class="delivery_courier m-dashed">Оплата наличными курьеру:</span> <span class="delivery_courier--right m-final">6000 руб</span>
+			</p>
+			<p class="button--orange m-green"><a ng-click="ctrl.payOrder({'nextPage': 'pay_order'})">Перейти к оплате</a></p>
+		</fieldset>
+	</form>
+
+	<div class="checkout--info">
+		<p><span>Покупатель:</span> <strong class="checkout--name">{{customer.name}}</strong></p>
+		<p><span>Эл. почта:</span> <strong class="checkout--mail">{{customer.email}}</strong></p>
+		<p><span>Моб. телефон:</span> <strong class="checkout--phone">{{customer.phone}}</strong></p>
+		<p class="checkout--delivery_info">
+			<em ng-if="customer.delivery == 1">Самовывоз по адресу:</em>
+			<em ng-if="customer.delivery == 2">Доставка курьером от 2-х до 7-ми <br>рабочих дней по адресу:</em>
+			<strong>{{customer.country}}, {{customer.city}} <br> {{customer.address}}</strong>
+		</p>
+	</div>
+</div>

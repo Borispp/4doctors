@@ -12,6 +12,9 @@ svgSprite = require 'gulp-svg-sprites'
 gulp = require 'gulp'
 bower = require 'gulp-bower'
 gulpLoadPlugins = require 'gulp-load-plugins'
+uglify = require 'gulp-uglifyjs'
+concat = require 'gulp-concat'
+
 g = gulpLoadPlugins()
 
 # config.yml file
@@ -59,8 +62,9 @@ gulp.task 'sprite', ->
 
     return
 
-gulp.task 'sprites', ->
-  gulp.src('../src/assets/svg/*.svg').pipe(svgSprite()).pipe gulp.dest('assets')
+gulp.task 'spritesSvg', ->
+  # gulp.src('../src/assets/svg/*.svg').pipe(svgSprite()).pipe gulp.dest('assets')
+  gulp.src(config.paths.src.images.svg.path).pipe(svgSprite({cssFile: config.paths.built.styles.svg.path, svgPath: config.paths.built.images.svg.sprite.path})).pipe gulp.dest(config.paths.built.images.svg.path)
 
 # Компиляция coffee в js
 gulp.task 'coffee', ->
@@ -157,13 +161,20 @@ gulp.task 'watch', ->
 
     return
 
+gulp.task 'uglify', ->
+  gulp.src('../built/assets/scripts/**.js').pipe(uglify('app.min.js', outSourceMap: true)).pipe gulp.dest('../built/assets/scripts/')
+  return
+
+gulp.task 'concat', ->
+  gulp.src('../built/assets/scripts/**/*.js').pipe(concat('all.js')).pipe gulp.dest('../built/assets/scripts/')
+
 
 ##################################################################################
 ##### Таски по группам
 ##################################################################################
 
 # Выполнение всех тасков
-gulp.task 'default', ['bower', 'sprite', 'stylus', 'coffee', 'images', 'jade', 'scripts']
+gulp.task 'default', ['bower', 'sprite', 'stylus', 'coffee', 'images', 'jade', 'scripts', 'spritesSvg']
 
 # Dev таск для разработки с отслеживанием измнений файлов и компиляцией их на лету
 gulp.task 'dev', ['default', 'watch']

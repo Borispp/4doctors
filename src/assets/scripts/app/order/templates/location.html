@@ -1,0 +1,32 @@
+<div class="checkout">
+	<div class="error m-hide-top">
+		<p class="selectAll">Пожалуйста, заполните все поля</p>
+	</div>
+	<form action="" class="form">
+		<fieldset class="order_steps">
+			<p>
+				<select name="checkoutCountry" id="checkoutCountry" class="fake_select" ng-model="customer.country">
+					<option value="Россия">Россия</option>
+					<option value="Молдова">Молдова</option>
+					<option value="Германия">Германия</option>
+				</select>
+				<label for="checkoutCountry" class="select_label"><span>Страна</span> <strong class="select_label--result"></strong></label>
+			</p>
+			<p>
+				<select name="checkoutCity" id="checkoutCity" class="fake_select" ng-model="customer.city">
+					<option value="Ашхабад">Ашхабад</option>
+					<option value="Лемберг">Лемберг</option>
+					<option value="Константинополь">Константинополь</option>
+				</select>
+				<label for="checkoutCity" class="select_label"><span>Город</span> <strong class="select_label--result"></strong></label>
+			</p>
+			<p class="button--orange"><a  ng-click="ctrl.saveCustomer({'nextPage': 'delivery'})">Продолжить</a></p>
+		</fieldset>
+	</form>
+
+	<div class="checkout--info">
+		<p><span>Покупатель:</span> <strong class="checkout--name">{{customer.name}}</strong></p>
+		<p><span>Эл. почта:</span> <strong class="checkout--mail">{{customer.email}}</strong></p>
+		<p><span>Моб. телефон:</span> <strong class="checkout--phone">{{customer.phone}}</strong></p>
+	</div>
+</div>

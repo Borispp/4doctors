@@ -1,0 +1,43 @@
+.loading_overlay
+	position absolute
+	top 0
+	left 0
+	width 100%
+	height 100%
+	z-index 100
+
+	&.m-light
+		background rgba(255,255,255,0.8)
+
+	.spin
+		position absolute
+		top 50%
+		left 50%
+		transform translate(-50%, -50%)
+		margin -10px 0 0 -10px
+		display inline-block
+		animation loading-spin 2s infinite linear
+		-webkit-animation loading-spin 2s infinite linear
+		text-align center
+		opacity .7
+		background-image url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNiIgaGVpZ2h0PSIyNiIgdmlld0JveD0iMCAwIDI2IDI2Ij4gICAgPHBhdGggZD0iTSAxMiAwIEwgMTIgMi4yNSBDIDYuNTAzNTM0MiAyLjc2MDM2MDEgMi4xODc1IDcuMzcwMzA0MSAyLjE4NzUgMTMgQyAyLjE4NzUgMTUuOTM1IDMuMzUyIDE4LjU4MzI1IDUuMjUgMjAuNTMxMjUgTCA3Ljk2ODc1IDE4LjA5Mzc1IEMgNi42NTk3NSAxNi43OTQ3NSA1Ljg0Mzc1IDE0Ljk4OCA1Ljg0Mzc1IDEzIEMgNS44NDM3NSA5LjM4ODY3MzMgOC41MjQwMzc5IDYuMzk4NTA0NSAxMiA1LjkwNjI1IEwgMTIgOCBMIDE4LjQwNjI1IDQgTCAxMiAwIHogTSAyMC43NSA1LjQ2ODc1IEwgMTguMDYyNSA3LjkwNjI1IEMgMTkuMzY5NSA5LjIwNTI1IDIwLjE1NjI1IDExLjAxNCAyMC4xNTYyNSAxMyBDIDIwLjE1NjI1IDE2LjYxMzExIDE3LjQ3OTU3MyAxOS41NzM1NDUgMTQgMjAuMDYyNSBMIDE0IDE4IEwgNy41OTM3NSAyMiBMIDE0IDI2IEwgMTQgMjMuNzUgQyAxOS40OTY1NjcgMjMuMjM5NTM4IDIzLjgxMjUgMTguNjI5Njk2IDIzLjgxMjUgMTMgQyAyMy44MTI1IDEwLjA2NyAyMi42NDggNy40MTY3NSAyMC43NSA1LjQ2ODc1IHoiLz48L3N2Zz4=')
+		background-size 26px 26px
+		width 26px
+		height 26px
+
+// animation
+@-webkit-keyframes loading-spin
+	0%
+		-webkit-transform rotate(0deg)
+		transform rotate(0deg)
+	100%
+		-webkit-transform rotate(359deg)
+		transform rotate(359deg)
+
+@keyframes loading-spin
+	0%
+		-webkit-transform rotate(0deg)
+		transform rotate(0deg)
+	100%
+		-webkit-transform rotate(359deg)
+		transform rotate(359deg)

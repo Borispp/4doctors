@@ -1,5 +1,5 @@
 .item_detail
-	padding-bottom 12px
+	padding-bottom 60px
 	&--info
 		position relative
 		font-size 14px
@@ -13,20 +13,23 @@
 
 		.product_like
 			position absolute
-			top 10px
-			right 18px
-			size(52px 52px)
+			top 12px
+			right 12px
 			opacity 0.35
-
-			&:hover
-				background url('../images/svg/like_active.svg')
-				size(52px 52px)
-				opacity 1
+			scaleIcon(1.6)
 
 	&--select
 		fieldset
-			margin 18px 14px 0 10px
+			margin 12px 14px 0 10px
 
 	.content_description
 		margin 0 14px
 		padding-top 12px
+
+
+	.button--orange
+		position fixed
+		width 100%
+		bottom 0
+		border-top 1px solid #E5E2E2
+		padding 4px

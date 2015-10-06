@@ -1,0 +1,155 @@
+.icon {
+    font-size: 10px;
+}
+
+.icon:before {
+    content:' ';
+    vertical-align:middle;
+    display: inline-block;
+    background-image: url("../images/svg/svg/sprite.svg");
+    background-repeat: no-repeat;
+    background-size: 9.2em 90em;
+}
+
+.no-svg .icon:before {
+    background-image: url("../svg/sprite.png");
+}
+
+.icon.accessories:before {
+    background-position: 0em 0em;
+    width: 5.6em;
+    height: 6.7em;
+}
+
+.icon.arrow:before {
+    background-position: 0em -6.7em;
+    width: 1.3em;
+    height: 2.1em;
+}
+
+.icon.arrow2:before {
+    background-position: 0em -8.8em;
+    width: 1.5em;
+    height: 1em;
+}
+
+.icon.bathrobe:before {
+    background-position: 0em -9.8em;
+    width: 8.9em;
+    height: 9em;
+}
+
+.icon.bigdislike:before {
+    background-position: 0em -18.8em;
+    width: 7.1em;
+    height: 6.1em;
+}
+
+.icon.biglike:before {
+    background-position: 0em -24.9em;
+    width: 7.1em;
+    height: 6.1em;
+}
+
+.icon.cap:before {
+    background-position: 0em -31em;
+    width: 6.4em;
+    height: 3.5em;
+}
+
+.icon.cart:before {
+    background-position: 0em -34.5em;
+    width: 2.7em;
+    height: 2em;
+}
+
+.icon.checkmark:before {
+    background-position: 0em -36.5em;
+    width: 1.5em;
+    height: 1.2em;
+}
+
+.icon.close:before {
+    background-position: 0em -37.7em;
+    width: 2.2em;
+    height: 2.1em;
+}
+
+.icon.fb:before {
+    background-position: 0em -39.8em;
+    width: 4em;
+    height: 4em;
+}
+
+.icon.increase:before {
+    background-position: 0em -43.8em;
+    width: 4em;
+    height: 4.1em;
+}
+
+.icon.like:before {
+    background-position: 0em -47.9em;
+    width: 2.4em;
+    height: 2.1em;
+}
+
+.icon.like_active:before {
+    background-position: 0em -50em;
+    width: 3.2em;
+    height: 3.2em;
+}
+
+.icon.like_empty:before {
+    background-position: 0em -53.2em;
+    width: 3.2em;
+    height: 3.2em;
+}
+
+.icon.logo:before {
+    background-position: 0em -56.4em;
+    width: 7.6em;
+    height: 1.5em;
+}
+
+.icon.menu:before {
+    background-position: 0em -57.9em;
+    width: 2.4em;
+    height: 1.9em;
+}
+
+.icon.pants:before {
+    background-position: 0em -59.8em;
+    width: 6.4em;
+    height: 8em;
+}
+
+.icon.shoes:before {
+    background-position: 0em -67.8em;
+    width: 7em;
+    height: 3.6em;
+}
+
+.icon.synchronize:before {
+    background-position: 0em -71.4em;
+    width: 2.6em;
+    height: 2.6em;
+}
+
+.icon.tops:before {
+    background-position: 0em -74em;
+    width: 9.2em;
+    height: 8em;
+}
+
+.icon.vk:before {
+    background-position: 0em -82em;
+    width: 4em;
+    height: 4em;
+}
+
+.icon.wa:before {
+    background-position: 0em -86em;
+    width: 4em;
+    height: 4em;
+}
+

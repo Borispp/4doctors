@@ -91,3 +91,11 @@ size($size)
   background-size $size[0] $size[1]
   width $size[0]
   height $size[1]
+
+scaleIcon()
+  &:before
+    -moz-transform scale(arguments)
+    -ms-transform scale(arguments)
+    -webkit-transform scale(arguments)
+    -o-transform scale(arguments)
+    transform scale(arguments)

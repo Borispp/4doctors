@@ -1,44 +1,45 @@
 @font-face
-  font-family 'HelveticaNeue'
-  font-weight 300
-  src url('./fonts/HelveticaNeueCyrLight/HelveticaNeueCyrLight.eot')
-  src url('./fonts/HelveticaNeueCyrLight/HelveticaNeueCyrLight.eot') format('embedded-opentype'),
-    url('./fonts/HelveticaNeueCyrLight/HelveticaNeueCyrLight.woff2') format('woff2'),
-    url('./fonts/HelveticaNeueCyrLight/HelveticaNeueCyrLight.woff') format('woff'),
-    url('./fonts/HelveticaNeueCyrLight/HelveticaNeueCyrLight.ttf') format('truetype'),
-    url('./fonts/HelveticaNeueCyrLight/HelveticaNeueCyrLight.svg#HelveticaNeueCyrLight') format('svg')
+	font-family 'HelveticaNeue'
+	font-weight 300
+	src url('./fonts/HelveticaNeueCyrLight/HelveticaNeueCyrLight.eot')
+	src url('./fonts/HelveticaNeueCyrLight/HelveticaNeueCyrLight.eot') format('embedded-opentype'),
+		url('./fonts/HelveticaNeueCyrLight/HelveticaNeueCyrLight.woff2') format('woff2'),
+		url('./fonts/HelveticaNeueCyrLight/HelveticaNeueCyrLight.woff') format('woff'),
+		url('./fonts/HelveticaNeueCyrLight/HelveticaNeueCyrLight.ttf') format('truetype'),
+		url('./fonts/HelveticaNeueCyrLight/HelveticaNeueCyrLight.svg#HelveticaNeueCyrLight') format('svg')
 
 @font-face
-  font-family 'HelveticaNeue'
-  font-weight 400
-  src url('./fonts/HelveticaNeueCyrRoman/HelveticaNeueCyrRoman.eot')
-  src url('./fonts/HelveticaNeueCyrRoman/HelveticaNeueCyrRoman.eot') format('embedded-opentype'),
-    url('./fonts/HelveticaNeueCyrRoman/HelveticaNeueCyrRoman.woff2') format('woff2'),
-    url('./fonts/HelveticaNeueCyrRoman/HelveticaNeueCyrRoman.woff') format('woff'),
-    url('./fonts/HelveticaNeueCyrRoman/HelveticaNeueCyrRoman.ttf') format('truetype'),
-    url('./fonts/HelveticaNeueCyrRoman/HelveticaNeueCyrRoman.svg#HelveticaNeueCyrRoman') format('svg')
+	font-family 'HelveticaNeue'
+	font-weight 400
+	src url('./fonts/HelveticaNeueCyrRoman/HelveticaNeueCyrRoman.eot')
+	src url('./fonts/HelveticaNeueCyrRoman/HelveticaNeueCyrRoman.eot') format('embedded-opentype'),
+		url('./fonts/HelveticaNeueCyrRoman/HelveticaNeueCyrRoman.woff2') format('woff2'),
+		url('./fonts/HelveticaNeueCyrRoman/HelveticaNeueCyrRoman.woff') format('woff'),
+		url('./fonts/HelveticaNeueCyrRoman/HelveticaNeueCyrRoman.ttf') format('truetype'),
+		url('./fonts/HelveticaNeueCyrRoman/HelveticaNeueCyrRoman.svg#HelveticaNeueCyrRoman') format('svg')
 
 @font-face
-  font-family 'HelveticaNeue'
-  font-weight 500
-  src url('./fonts/HelveticaNeueCyrMedium/HelveticaNeueCyrMedium.eot')
-  src url('./fonts/HelveticaNeueCyrMedium/HelveticaNeueCyrMedium.eot') format('embedded-opentype'),
-    url('./fonts/HelveticaNeueCyrMedium/HelveticaNeueCyrMedium.woff2') format('woff2'),
-    url('./fonts/HelveticaNeueCyrMedium/HelveticaNeueCyrMedium.woff') format('woff'),
-    url('./fonts/HelveticaNeueCyrMedium/HelveticaNeueCyrMedium.ttf') format('truetype'),
-    url('./fonts/HelveticaNeueCyrMedium/HelveticaNeueCyrMedium.svg#HelveticaNeueCyrMedium') format('svg')
+	font-family 'HelveticaNeue'
+	font-weight 500
+	src url('./fonts/HelveticaNeueCyrMedium/HelveticaNeueCyrMedium.eot')
+	src url('./fonts/HelveticaNeueCyrMedium/HelveticaNeueCyrMedium.eot') format('embedded-opentype'),
+		url('./fonts/HelveticaNeueCyrMedium/HelveticaNeueCyrMedium.woff2') format('woff2'),
+		url('./fonts/HelveticaNeueCyrMedium/HelveticaNeueCyrMedium.woff') format('woff'),
+		url('./fonts/HelveticaNeueCyrMedium/HelveticaNeueCyrMedium.ttf') format('truetype'),
+		url('./fonts/HelveticaNeueCyrMedium/HelveticaNeueCyrMedium.svg#HelveticaNeueCyrMedium') format('svg')
 
 @font-face
-  font-family 'Impact'
-  font-weight 500
-  src url('./fonts/Impact/Impact.eot')
-  src url('./fonts/Impact/Impact.eot') format('embedded-opentype'),
-    url('./fonts/Impact/Impact.woff2') format('woff2'),
-    url('./fonts/Impact/Impact.woff') format('woff'),
-    url('./fonts/Impact/Impact.ttf') format('truetype'),
-    url('./fonts/Impact/Impact.svg#Impact') format('svg')
+	font-family 'Impact'
+	font-weight 400
+	src url('./fonts/Impact/Impact.eot')
+	src url('./fonts/Impact/Impact.eot') format('embedded-opentype'),
+		url('./fonts/Impact/Impact.woff2') format('woff2'),
+		url('./fonts/Impact/Impact.woff') format('woff'),
+		url('./fonts/Impact/Impact.ttf') format('truetype'),
+		url('./fonts/Impact/Impact.svg#Impact') format('svg')
 
 html
+	-webkit-text-size-adjust none
 	min-height 100%
 body
 	font-size 13px
@@ -50,34 +51,65 @@ body, input, textarea
 
 input, textarea
 	+placeholder()
-    font-weight 300
+		font-weight 300
 *:focus
 	outline none
 
+// Popup and Body states
 label
 	cursor pointer
 .m-show
 	display block !important
 .m-hide
+	display none
+.m-hide_important
 	display none !important
-.hide_from_top
-  top calc(-100% - 40px)
-  transition top 0.3s
+
+.m-hide-top
+	top -100% !important
+
+.left_nav
+	transition left 0.3s
+.m-hide-left
+	left -100% !important
+.m-show-left
+	left 0 !important
+
 .m-show_top
-  top 40px
+	top 40px !important
+
 .m-bold
 	font-weight bold
+
 .m-tt_none
 	text-transform none
+.ng-cloak
+	#main_header
+		z-index -1
+.ng-scope
+	.angular_preview
+		transition visibility 0.5s, opacity 0.5s
+		visibility hidden
+		opacity 0
+
 .popup_active, .nav_active
 	overflow hidden
 	height 100%
 	max-height 100%
 	#main_content
 		display none
+.popup_active nav
+	display none
+
+.popup_overlay
+	overflow hidden
+	position relative
+	#main_content
+		height 100%
+
 #overlay
 	background rgba(0,0,0, 0.7)
-	position absolute
+	position fixed
 	z-index 9998
 	top 0
 	left 0

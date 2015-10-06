@@ -1,0 +1,51 @@
+<div class="item_detail">
+	<div class="error m-hide-top">
+		<p class="selectColor m-hide">Пожалуйста, выберите цвет</p>
+		<p class="selectSize m-hide">Пожалуйста, выберите размер</p>
+	</div>
+	<div class="slide">
+		<div class="slide--social">
+			<a href="#" class="icon vk"></a>
+			<a href="#" class="icon wa"></a>
+			<a href="#" class="icon fb"></a>
+		</div>
+		<a href="" class="icon increase"></a>
+
+		<div class="slide--wrapper">
+			<div class="slide--content" style="width: {{sliderWidth}}px">
+				<a href="" ng-repeat="image in product.allImages"><img ng-src="{{image}}" alt="" class="open_image" width="200"></a>
+			</div>
+		</div>
+	</div>
+	<div class="item_detail--info">
+		<p>Брэнд: {{product.name}}</p>
+		<p>Артикул: {{product.articol}}</p>
+		<p> Цена: <strong>{{product.price}} руб</strong></p>
+		<a href="" class="icon product_like" ng-click="ctrl.like(id)" ng-class="likes[id]? likes[id] : 'like_empty'"></a>
+	</div>
+
+	<form action="" class="item_detail--select">
+		<fieldset class="item_detail--colors select_color">
+			<h2><span>ЦВЕТ:</span> Выберите</h2>
+			<p ng-repeat="color in product.colors">
+				<input type="radio" name="filterSelectColor" id="filterSelect{{color}}" ng-model="ctrl.color" value="{{color}}">
+				<label for="filterSelect{{color}}"><span></span></label>
+			</p>
+		</fieldset>
+		<fieldset class="item_detail--colors select_size">
+			<h2>РАЗМЕР: <a href="" class="active">RUS</a> | <a href="">US</a></h2>
+			<p ng-repeat="size in product.sizes">
+				<input type="radio" name="filterSelectSize" id="filterSelect{{size.select}}" data-ng-disabled="size.available == false" ng-model="ctrl.size" value="{{size.select}}">
+				<label for="filterSelect{{size.select}}">{{size.rusSize}}</label>
+			</p>
+		</fieldset>
+	</form>
+	<div class="content_description">
+		<h2>Описание</h2>
+		<div ng-bind-html="product.description"></div>
+		<h2>Состав</h2>
+		<div ng-bind-html="product.composition"></div>
+	</div>
+
+	<p class="button--orange"><a ng-click="ctrl.addCart()">Добавить в корзину</a></p>
+</div>

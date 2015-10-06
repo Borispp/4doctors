@@ -1,5 +1,8 @@
 .products_list
 	text-align center
+	a
+		color #000
+		text-decoration none
 	&--item
 		display inline-block
 		width 150px
@@ -13,12 +16,20 @@
 		margin-bottom 4px
 		width 150px
 		height 170px
-		display flex
-		flex-direction row
-		flex-wrap wrap
-		justify-content center
-		align-content flex-start
-		align-items center
+		display inline-block
+		vertical-align middle
+		overflow hidden
+
+		&:before
+			content ''
+			display inline-block
+			height 100%
+			vertical-align middle
+
+		img
+			display inline-block
+			vertical-align middle
+			max-height 100%
 
 	&--price
 		font-size 14px
@@ -28,10 +39,8 @@
 		font-weight 300
 	&--like
 		position absolute
+		z-index 1
 		top 0
-		right 0
+		right 4px
 		opacity 0.35
-		
-		&:hover
-			background url('../images/svg/like_active.svg')
-			opacity 1
+		scaleIcon(1.1)

@@ -1,0 +1,55 @@
+<div class="checkout">
+	<div class="error m-hide-top">
+		<p class="selectAll">Пожалуйста, укажите метод оплаты</p>
+	</div>
+	<form action="" class="form">
+		<fieldset class="order_steps select_types">
+			<div class="select_types--wrap">
+				<p class="radio">
+					<input type="radio" name="payment" id="bankCard" ng-model="customer.paymentMethod" value="bankCard">
+					<label for="bankCard">
+						<span class="radio_circ"></span>
+						<strong>Банковской картой</strong>
+						<span>VISA или MasterCard</span>
+					</label>
+				</p>
+				<p class="radio">
+					<input type="radio" name="payment" id="cash" ng-model="customer.paymentMethod" value="cash">
+					<label for="cash">
+						<span class="radio_circ"></span>
+						<strong>Наличными курьеру</strong>
+						<span>При получении заказа</span>
+					</label>
+				</p>
+				<p class="radio">
+					<input type="radio" name="payment" id="euroseti" ng-model="customer.paymentMethod" value="euroseti">
+					<label for="euroseti">
+						<span class="radio_circ"></span>
+						<strong>Через Евросеть / Связной</strong>
+						<span>Оплата в любом салоне <br> сети Евросеть или Связной</span>
+					</label>
+				</p>
+				<p class="radio">
+					<input type="radio" name="payment" id="sberbank" ng-model="customer.paymentMethod" value="sberbank">
+					<label for="sberbank">
+						<span class="radio_circ"></span>
+						<strong>Квитанцией Сбербанк</strong>
+						<span>Оплата в любом доступном <br>офисе Сбербанк</span>
+					</label>
+				</p>
+			</div>
+			<p class="button--gray"><a  ng-click="ctrl.saveCustomer({'nextPage': 'submit'})">Продолжить</a></p>
+		</fieldset>
+	</form>
+
+	<div class="checkout--info">
+		<p><span>Покупатель:</span> <strong class="checkout--name">{{customer.name}}</strong></p>
+		<p><span>Эл. почта:</span> <strong class="checkout--mail">{{customer.email}}</strong></p>
+		<p><span>Моб. телефон:</span> <strong class="checkout--phone">{{customer.phone}}</strong></p>
+		<p class="checkout--delivery_info">
+			<em ng-if="customer.delivery == 1">Самовывоз по адресу:</em>
+			<em ng-if="customer.delivery == 2">Доставка курьером от 2-х до 7-ми <br>рабочих дней по адресу:</em>
+			<strong>{{customer.country}}, {{customer.city}} <br> {{customer.address}}</strong>
+		</p>
+	</div>
+</div>

@@ -1,0 +1,23 @@
+<div class="checkout">
+	<div class="error m-hide-top">
+		<p class="selectAll">Пожалуйста, укажите адрес</p>
+	</div>
+	<form action="" class="form">
+		<fieldset class="order_steps comments">
+			<p class="fake_placeholder">
+				<textarea name="" id="" cols="30" rows="6" id="orderComments" ng-model="customer.address"></textarea>
+				<label for="orderComments">Улица, дом, кв, комментарии</label>
+			</p>
+
+			<p class="button--gray"><a  ng-click="ctrl.saveCustomer({'nextPage': 'payment_method'})">Продолжить</a></p>
+		</fieldset>
+	</form>
+
+	<div class="checkout--info">
+		<p><span>Город:</span> <strong class="checkout--name">{{customer.city}}</strong></p>
+		<p><span>Страна:</span> <strong class="checkout--name">{{customer.country}}</strong></p>
+		<p><span>Покупатель:</span> <strong class="checkout--name">{{customer.name}}</strong></p>
+		<p><span>Эл. почта:</span> <strong class="checkout--mail">{{customer.email}}</strong></p>
+		<p><span>Моб. телефон:</span> <strong class="checkout--phone">{{customer.phone}}</strong></p>
+	</div>
+</div>

@@ -25,6 +25,8 @@ paths:
         path: "../src/assets/images/design"
       content:
         path: "../src/assets/images/content"
+      svg:
+        path: "../src/assets/images/svg/*.svg"
 
     templates:
       all: "../src/templates/**/*.jade"
@@ -42,6 +44,8 @@ paths:
     styles:
       all: "../built/assets/styles/**/*.css"
       path: "../built/assets/styles"
+      svg:
+        path: "../../styles/svg.css"
 
     scripts:
       all: "../built/assets/scripts/**/*.js"
@@ -54,6 +58,10 @@ paths:
         path: "../built/assets/images/design"
       content:
         path: "../built/assets/images/content"
+      svg:
+        path: "../built/assets/images/svg"
+        sprite:
+          path: "../images/svg/svg/sprite.svg"
 
     libs:
       path: '../built/assets/libs/'

@@ -15,12 +15,12 @@
   ],
   "dependencies": {
     "jquery": "~2.1.4",
-    "handlebars": "~4.0.0",
-    "requirejs-plugin-bower": "*",
-    "bootstrap": "~3.3.5",
     "underscore": "~1.8.3",
     "angular": "~1.4.6",
-    "df-visible": "customd/jquery-visible#~1.2.0"
+    "df-visible": "customd/jquery-visible#~1.2.0",
+    "angular-ui-router": "angular-ui/ui-router#~0.2.15",
+    "angular-sanitize": "~1.4.6",
+    "angular-local-storage": "~0.2.2"
   },
   "devDependencies": {
     "jquery": "~2.1.3"

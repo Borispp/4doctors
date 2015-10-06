@@ -1,45 +1,57 @@
+# Dirty JS for visual effects.
+# TODO: make pretty classes
+
 class OpenPopup
 	constructor: (@$el, @$data) ->
 		@init()
 	init: ->
 		@$el.on 'click', =>
-			if @$data.hasClass('m-hide')
+			if @$data.hasClass 'm-hide'
 				@open(@$data)
 			else
 				@close(@$data)
 
 	open: ($data) ->
-		$data.removeClass('m-hide')
-		$body.addClass 'nav_active'
+		$data.removeClass 'm-hide'
+		$body.addClass 'popup_active'
 	close: ($data) ->
-		$data.addClass('m-hide')
-		$body.removeClass 'nav_active'
+		$data.addClass 'm-hide'
+		$body.removeClass 'popup_active'
 
 class OpenNav
-	constructor: (@$el, @$data) ->
+	constructor: (@$el, @$data, @$closeEl) ->
 		@init()
 	init: ->
-		@$el.on 'click', =>
-			if @$data.hasClass('m-show_top')
-				@close(@$data)
+		$body.on 'click', '.nav_open', (e) =>
+			$el = $(e.target)
+			$data = $($el.data 'open')
+			if $data.hasClass 'm-hide-left'
+				@open($data)
 			else
-				@open(@$data)
+				@close()
+
+		$body.on 'click', '#main, .main_menu--links a', =>
+			@close()
 
 	open: ($data) ->
-		$data.addClass('m-show_top')
-		$body.addClass 'nav_active'
-	close: ($data) ->
-		$data.removeClass('m-show_top')
+		$data.removeClass 'm-hide-left'
+		setTimeout (->
+		  $body.addClass 'nav_active'
+		  return
+		), 200
+	close: () ->
+		$('.left_nav').addClass 'm-hide-left'
 		$body.removeClass 'nav_active'
 
 class OpenSliderImage
 	constructor: () ->
 		@$increase = $('.increase')
-		@$images = $('.slide--content img')
 		@init()
 	init: ->
-		@$increase.on 'click', =>
+		$body.on 'click', '.increase', =>
+			@$images = $('.slide--content img')
 			partialView = []
+
 			for img in @$images
 				$img = $(img)
 				if $img.visible()
@@ -53,51 +65,47 @@ class OpenSliderImage
 			else
 				@open partialView[1]
 
-		$openImage.on 'click', (e) =>
+		$body.on 'click', '.open_image', (e) =>
 			@open $(e.target)
 	open: ($img) ->
 		$popupImage.removeClass 'm-hide'
 		$popupImageContainer.html $img.clone()
 		$body.addClass 'popup_active'
 
-$body = $('body')
-$popups = $('.popup')
-$popupImage = $('.popup_image')
-$openImage = $('.open_image')
-$popupImageContainer = $('.popup_image--container')
-$popupClose = $('.popup_close')
+class OpenLike
+	constructor: ->
+		@init()
+	init: ->
+		$('#main_content').on 'click', '.like_active', (e) ->
+			e.preventDefault()
+			$overlay.fadeIn(300)
+			$biglike.removeClass 'm-hide-left'
+			$body.addClass 'popup_overlay'
+		$('#main_content').on 'click', '.like_empty', (e) ->
+			e.preventDefault()
+			$overlay.fadeIn(300)
+			$bigdislike.removeClass 'm-hide-left'
+			$body.addClass 'popup_overlay'
+
+		$overlay.on 'click', ->
+			$popupLikes.addClass 'm-hide-left'
+			$body.removeClass 'popup_overlay'
+			$overlay.fadeOut(300)
 
 $('a.popup, a.popup_image').on 'click', (e) ->
 	e.preventDefault()
 
-$('.fake_placeholder input, .fake_placeholder textarea').on 'blur', ->
-  val = $(this).val()
-  if val
-    $(this).parents('p').addClass 'nonempty'
-  else
-    $(this).parents('p').removeClass 'nonempty'
-  return
-
-$('.fake_select').on 'blur', ->
-	select = $(@)
-	selected = select.find('option:selected').text()
-
-	select.find('+ .select_label').addClass('active')
-	select.find('+ .select_label .select_label--result').html selected
-
+$popupClose.on 'click', ->
+	$popups.addClass 'm-hide'
+	$body.removeClass 'popup_active'
 
 $('.popup_open').each ->
 	$el = $(@)
 	$data = $($el.data 'open')
 	new	OpenPopup($el, $data)
 
-$('.nav_open').each ->
-	$el = $(@)
-	$data = $($el.data 'open')
-	new	OpenNav($el, $data)
+$("#overlay, .popup_like").on("touchmove", false)
 
+new	OpenNav
 new OpenSliderImage
-
-$popupClose.on 'click', ->
-	$popups.addClass 'm-hide'
-	$body.removeClass 'popup_active'
+new OpenLike

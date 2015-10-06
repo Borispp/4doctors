@@ -1,0 +1,143 @@
+<div class="filter_menu">
+	<form action="" class="filter_settings">
+		<fieldset class="filter_settings--fast">
+			<p>
+				<input type="radio" name="filterSettingsFast" id="lowprice" ng-model="filterSettings.price" value="lowPrice">
+				<label for="lowprice">Низкая цена<span></span></label>
+			</p>
+			<p>
+				<input type="radio" name="filterSettingsFast" id="allproducts" ng-model="filterSettings.price" value="allPrice">
+				<label for="allproducts">Все товары<span></span></label>
+			</p>
+			<p>
+				<input type="radio" name="filterSettingsFast" id="highprice" ng-model="filterSettings.price" value="highPrice">
+				<label for="highprice">Высокая цена<span></span></label>
+			</p>
+		</fieldset>
+		<fieldset class="check_radio">
+			<div class="filter_settings--sex">
+				<p>
+					<input type="radio" name="filterSettingsSex" id="filterSettingsMen" ng-model="filterSettings.sex" value="man" >
+					<label for="filterSettingsMen">Мужское</label>
+				</p>
+				<p>
+					<input type="radio" name="filterSettingsSex" id="filterSettingsWomen" ng-model="filterSettings.sex" value="woman">
+					<label for="filterSettingsWomen">Женское</label>
+				</p>
+				<p>
+					<input type="radio" name="filterSettingsSex" id="filterSettingsUnisex" ng-model="filterSettings.sex" value="unisex">
+					<label for="filterSettingsUnisex">Унисекс</label>
+				</p>
+			</div>
+		</fieldset>
+		<fieldset class="check_box">
+			<h2 class="filter_headline">Размер одежды: <a href="#">RUS</a> | <a href="#" class="active">US</a></h2>
+			<p>
+				<input type="checkbox" name="filterSettingsSize" id="filterSettingsXS"  ng-model="filterSettings.size.sx">
+				<label for="filterSettingsXS">xs</label>
+			</p>
+			<p>
+				<input type="checkbox" name="filterSettingsSize" id="filterSettingsS"  ng-model="filterSettings.size.s">
+				<label for="filterSettingsS">s</label>
+			</p>
+			<p>
+				<input type="checkbox" name="filterSettingsSize" id="filterSettingsM"  ng-model="filterSettings.size.m">
+				<label for="filterSettingsM">m</label>
+			</p>
+			<p>
+				<input type="checkbox" name="filterSettingsSize" id="filterSettingsL"  ng-model="filterSettings.size.l">
+				<label for="filterSettingsL">l</label>
+			</p>
+			<p>
+				<input type="checkbox" name="filterSettingsSize" id="filterSettingsXL"  ng-model="filterSettings.size.xl">
+				<label for="filterSettingsXL">XL</label>
+			</p>
+			<p>
+				<input type="checkbox" name="filterSettingsSize" id="filterSettings2XL"  ng-model="filterSettings.size.xl2">
+				<label for="filterSettings2XL">2XL</label>
+			</p>
+			<p>
+				<input type="checkbox" name="filterSettingsSize" id="filterSettings3XL"  ng-model="filterSettings.size.xl3">
+				<label for="filterSettings3XL">3XL</label>
+			</p>
+		</fieldset>
+		<fieldset class="check_box">
+			<h2 class="filter_headline">Размер обуви</h2>
+			<p>
+				<input type="checkbox" name="filterSettingsShoesSize" id="filterSettings36" ng-model="filterSettings.shoesSize.s36">
+				<label for="filterSettings36">36</label>
+			</p>
+			<p>
+				<input type="checkbox" name="filterSettingsShoesSize" id="filterSettings37" ng-model="filterSettings.shoesSize.s37">
+				<label for="filterSettings37">37</label>
+			</p>
+			<p>
+				<input type="checkbox" name="filterSettingsShoesSize" id="filterSettings38" ng-model="filterSettings.shoesSize.s38">
+				<label for="filterSettings38">38</label>
+			</p>
+			<p>
+				<input type="checkbox" name="filterSettingsShoesSize" id="filterSettings39" ng-model="filterSettings.shoesSize.s39">
+				<label for="filterSettings39">39</label>
+			</p>
+			<p>
+				<input type="checkbox" name="filterSettingsShoesSize" id="filterSettings40" ng-model="filterSettings.shoesSize.s40">
+				<label for="filterSettings40">40</label>
+			</p>
+			<p>
+				<input type="checkbox" name="filterSettingsShoesSize" id="filterSettings41" ng-model="filterSettings.shoesSize.s41">
+				<label for="filterSettings41">41</label>
+			</p>
+			<p>
+				<input type="checkbox" name="filterSettingsShoesSize" id="filterSettings42" ng-model="filterSettings.shoesSize.s42">
+				<label for="filterSettings42">42</label>
+			</p>
+			<p>
+				<input type="checkbox" name="filterSettingsShoesSize" id="filterSettings43" ng-model="filterSettings.shoesSize.s43">
+				<label for="filterSettings43">43</label>
+			</p>
+			<p>
+				<input type="checkbox" name="filterSettingsShoesSize" id="filterSettings44" ng-model="filterSettings.shoesSize.s44">
+				<label for="filterSettings44">44</label>
+			</p>
+			<p>
+				<input type="checkbox" name="filterSettingsShoesSize" id="filterSettings45" ng-model="filterSettings.shoesSize.s45">
+				<label for="filterSettings45">45</label>
+			</p>
+			<p>
+				<input type="checkbox" name="filterSettingsShoesSize" id="filterSettings46" ng-model="filterSettings.shoesSize.s46">
+				<label for="filterSettings46">46</label>
+			</p>
+		</fieldset>
+		<fieldset class="checkbox_list">
+			<h2 class="filter_headline">Бренды</h2>
+			<p>
+				<input type="checkbox" name="filterSettingsBrands" id="filterSettingsCherokee" ng-model="filterSettings.brands.cherokee">
+				<label for="filterSettingsCherokee" class="icon checkmark">Cherokee</label>
+			</p>
+			<p>
+				<input type="checkbox" name="filterSettingsBrands" id="filterSettingsDickies" ng-model="filterSettings.brands.dickies">
+				<label for="filterSettingsDickies" class="icon checkmark">Dickies</label>
+			</p>
+			<p>
+				<input type="checkbox" name="filterSettingsBrands" id="filterSettingsRunway" ng-model="filterSettings.brands.runway">
+				<label for="filterSettingsRunway" class="icon checkmark">Runway</label>
+			</p>
+			<p>
+				<input type="checkbox" name="filterSettingsBrands" id="filterSettingsHeartsoul" ng-model="filterSettings.brands.heartsoul">
+				<label for="filterSettingsHeartsoul" class="icon checkmark">Heartsoul</label>
+			</p>
+			<p>
+				<input type="checkbox" name="filterSettingsBrands" id="filterSettingsInfinity" ng-model="filterSettings.brands.infinity">
+				<label for="filterSettingsInfinity" class="icon checkmark">Infinity</label>
+			</p>
+			<p>
+				<input type="checkbox" name="filterSettingsBrands" id="filterSettingsCodehappy" ng-model="filterSettings.brands.codehappy">
+				<label for="filterSettingsCodehappy" class="icon checkmark">Code Happy</label>
+			</p>
+			<p>
+				<input type="checkbox" name="filterSettingsBrands" id="filterSettingsCertanity" ng-model="filterSettings.brands.certanity">
+				<label for="filterSettingsCertanity" class="icon checkmark">Certanity</label>
+			</p>
+		</fieldset>
+	</form>
+</div>

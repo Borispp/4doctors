@@ -57,7 +57,7 @@
 		borderbox()
 
 	.fake_placeholder
-		input:focus + label, textarea:focus + label, &.nonempty label
+		input:focus + label, textarea:focus + label, &.nonempty label, .ng-dirty + label
 			font-size 9px
 			top -2px
 			left 6px
@@ -65,6 +65,11 @@
 			padding 0 4px
 			background #F8F8F8
 			line-height 8px
+
+		.ng-invalid
+			border 1px solid #D0021B !important
+			+ label
+				color #D0021B
 
 		label
 			position absolute

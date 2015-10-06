@@ -1,0 +1,10 @@
+<a href="" class="nav_open icon menu" data-open=".main_menu" ng-if="title == false"></a>
+<a href="" class="icon arrow back" ng-if="title != false && filter == false" ng-click="ctrl.back()"></a>
+<a ui-sref="home" class="cancel" ng-if="filter == true"  ng-click="ctrl.back()">Отменить</a>
+<div class="main_headline">
+	<a ui-sref="home" class="icon logo" id="main" ng-if="title == false"></a>
+	<h1 ng-if="title != false" ng-bind="title"></h1>
+</div>
+<a ui-sref="home" class="apply" ng-if="filter == true" ng-click="ctrl.filterSet()">Применить</a>
+<a ui-sref="cart" class="icon cart" ng-if="filter == false && cartIcon != false"><span class="count" ng-if="cartCount() > 0" ng-bind="cartCount()"></span></a>
+<a ui-sref="favorites" class="icon like" ng-if="filter == false && likeIcon != false"><span class="count" ng-if="likesCount() > 0" ng-bind="likesCount()"></span></a>
