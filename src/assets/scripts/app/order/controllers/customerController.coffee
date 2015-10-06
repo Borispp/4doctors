@@ -41,6 +41,13 @@ class LocationController
 	init: ->
 		@$scope.customer = @customerService.getCustomer()
 
+		## Dirty
+		angular.element('.fake_select').on 'change', ->
+			select = angular.element(@)
+			selected = select.find('option:selected').text()
+			select.find('+ .select_label').addClass('active')
+			select.find('+ .select_label .select_label--result').html selected
+
 	saveCustomer: (options) ->
 		if !@$scope.customer.city or !@$scope.customer.country
 			angular.element('.error').removeClass('m-hide-top')

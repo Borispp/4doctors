@@ -20,129 +20,6 @@
     </header>
 
     <div id="main_content">
-      <div class="checkout m-hide">
-        <form action="" class="form">
-          <fieldset class="order_steps">
-            <p class="fake_placeholder"><input type="email" id="checkoutMail" ><label for="checkoutMail">Электронная почта</label></p>
-            <p class="fake_placeholder"><input type="test" id="checkoutPhone" ><label for="checkoutPhone">Номер мобильного телефона</label></p>
-            <p class="fake_placeholder"><input type="test" id="checkoutName" ><label for="checkoutName">Имя и Фамилия</label></p>
-          </fieldset>
-          <fieldset class="order_steps">
-            <p>
-              <select name="checkoutCountry" id="checkoutCountry" class="fake_select">
-                <option value="1">Россия</option>
-                <option value="2">Молдова</option>
-                <option value="3">Германия</option>
-              </select>
-              <label for="checkoutCountry" class="select_label"><span>Страна</span> <strong class="select_label--result"></strong></label>
-            </p>
-            <p>
-              <select name="checkoutCity" id="checkoutCity" class="fake_select">
-                <option value="">Ашхабад</option>
-                <option value="">Лемберг</option>
-                <option value="">Константинополь</option>
-              </select>
-              <label for="checkoutCity" class="select_label"><span>Город</span> <strong class="select_label--result"></strong></label>
-            </p>
-            <p><a href="#" class="button--gray">Продолжить</a></p>
-            <p class="button--orange"><a href="#">Продолжить</a></p>
-          </fieldset>
-          <fieldset class="order_steps select_types">
-            <div class="select_types--wrap">
-              <p class="radio">
-                <input type="radio" name="delivery" id="pickup">
-                <label for="pickup">
-                  <span class="radio_circ"></span>
-                  <strong>Самовывоз — 0 руб.</strong>
-                  <span>Москва, метро Кропоткинская,<br> Болотная набережная 7/3 <br>шоурум 4doctors</span>
-                </label>
-              </p>
-
-              <p class="radio">
-                <input type="radio" name="delivery" id="courier">
-                <label for="courier">
-                  <span class="radio_circ"></span>
-                  <strong>Курьером — 300 руб.</strong>
-                  <span>по Москве в рабочие дни <br> с 10:00 до 18:00</span>
-                </label>
-              </p>
-            </div>
-          </fieldset>
-
-          <fieldset class="order_steps comments">
-            <p class="fake_placeholder">
-              <textarea name="" id="" cols="30" rows="6" id="orderComments"></textarea>
-              <label for="orderComments">Улица, дом, кв, комментарии</label>
-            </p>
-
-            <p><a href="#" class="button--gray">Продолжить</a></p>
-          </fieldset>
-
-          <fieldset class="user_cart--items" style="padding-bottom: 0;">
-            <div class="user_cart--item">
-              <div class="user_cart--image"><img src="./assets/images/content/img1.png" alt=""></div>
-              <div class="user_cart--description">
-                <p>Женский топ: 64743 </p>
-                <p>Цвет: Белый</p>
-                <p> Размер: 42/44</p>
-                <p class="user_cart--price">1 500 руб x <span class="user_cart--count_multiply">2</span> шт <span class="user_cart--count_price">= <span>1500</span> руб</span></p>
-              </div>
-            </div>
-            <div class="user_cart--item">
-              <div class="user_cart--image"><img src="./assets/images/content/img1.png" alt=""></div>
-              <div class="user_cart--description">
-                <p>Женский топ: 64743 </p>
-                <p>Цвет: Белый</p>
-                <p> Размер: 42/44</p>
-                <p class="user_cart--price">1 500 руб x <span class="user_cart--count_multiply">2</span> шт <span class="user_cart--count_price">= <span>1500</span> руб</span></p>
-              </div>
-            </div>
-          </fieldset>
-
-          <fieldset class="delivery_courier_type">
-            <p>
-              <span class="delivery_courier">Доставка курьером:</span> <span class="delivery_courier--right">= 300 руб</span>
-            </p>
-            <p class="m-bold">
-              <span class="delivery_courier m-dashed">Оплата наличными курьеру:</span> <span class="delivery_courier--right m-final">6000 руб</span>
-            </p>
-
-            <p class="button--orange m-green"><a href="#">Перейти к оплате</a></p>
-          </fieldset>
-
-          <fieldset>
-            <p class="fake_placeholder">
-              <input type="text" name="cardNumber" id="cardNumber" value="">
-              <label for="cardNumber">Номер карты</label>
-            </p>
-            <div class="info_input">
-              <p class="expiration">
-                <span class="input_headline">Срок годности</span>
-                <input type="text" name="expirationMonth" value="" placeholder="ММ">
-                <input type="text" name="expirationYear" value="" placeholder="ГГ">
-              </p>
-              <p class="cvv">
-                <span class="input_headline">CVV/CVC</span>
-                <input type="text" name="expirationDate" value="">
-              </p>
-            </div>
-            <div class="info_input">
-              <p>
-                <span class="input_headline">Как на карте</span>
-                <input type="text" name="expirationDate" value="" placeholder="Держатель карты">
-              </p>
-            </div>
-            <p><a href="#" class="button--gray">Оплатить <span class="pay_count">6000</span> <span class="m-tt_none">руб</span></a></p>
-          </fieldset>
-        </form>
-
-        <div class="checkout--info">
-          <p><span>Покупатель:</span> <strong class="checkout--name">Василий Петрович</strong></p>
-          <p><span>Эл. почта:</span> <strong class="checkout--mail">ivan@mail.ru</strong></p>
-          <p><span>Моб. телефон:</span> <strong class="checkout--phone">8 (985) 322-90-89</strong></p>
-          <p class="checkout--delivery_info">Доставка курьером от 2-х до 7-ми рабочих дней по адресу:  <strong>Россия, Москва ул. Крыжинапольского 14, кв 14, этаж 5, домофон 321  спросить Ивана</strong></p>
-        </div>
-      </div>
 
       <!-- Customer Module /-->
       <section ui-view="customer"></section>
@@ -240,10 +117,6 @@
   <script src="assets/scripts/all.js"></script>
 
   <!--
-  <script src="assets/scripts/visual/jqcache.js"></script>
-  <script src="assets/scripts/visual/main.js"></script>
-  <script src="assets/scripts/visual/inputs.js"></script>
-  
   <script src="assets/scripts/main.js"></script>
 
   <script src="assets/scripts/app/commons/main.js"></script>
@@ -280,6 +153,11 @@
   <script src="assets/scripts/app/order/controllers/customerController.js"></script>
   <script src="assets/scripts/app/order/services/customerService.js"></script>
   <script src="assets/scripts/app/order/directives/customerDirectives.js"></script>
+
+  <script src="assets/scripts/visual/jqcache.js"></script>
+  <script src="assets/scripts/visual/main.js"></script>
+  <script src="assets/scripts/visual/inputs.js"></script>
   /-->
+
 </body>
 </html>
