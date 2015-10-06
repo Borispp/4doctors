@@ -1133,7 +1133,7 @@ ProductItemService = (function() {
     var deferred;
     deferred = this.$q.defer();
     this.$http({
-      url: '/built/products.json',
+      url: '/4doctors/built/products.json',
       method: 'GET'
     }).success((function(_this) {
       return function(response) {
@@ -1320,7 +1320,7 @@ ProductsService = (function() {
     var deferred;
     deferred = this.$q.defer();
     this.$http({
-      url: '/built/products.json',
+      url: '/4doctors/built/products.json',
       method: 'GET'
     }).success((function(_this) {
       return function(response) {
