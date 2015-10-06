@@ -49,7 +49,14 @@ LocationController = (function() {
   }
 
   LocationController.prototype.init = function() {
-    return this.$scope.customer = this.customerService.getCustomer();
+    this.$scope.customer = this.customerService.getCustomer();
+    return angular.element('.fake_select').on('change', function() {
+      var select, selected;
+      select = angular.element(this);
+      selected = select.find('option:selected').text();
+      select.find('+ .select_label').addClass('active');
+      return select.find('+ .select_label .select_label--result').html(selected);
+    });
   };
 
   LocationController.prototype.saveCustomer = function(options) {
