@@ -8,7 +8,7 @@ class ProductItemService
 		deferred = @$q.defer()
 
 		@$http
-			url: '/built/products.json',
+			url: '/4doctors/built/products.json',
 			method: 'GET'
 		.success (response) =>
 			products = response.map (product) =>
