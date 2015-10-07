@@ -1,13 +1,14 @@
 var HeaderController;
 
 HeaderController = (function() {
-  HeaderController.$inject = ['$injector', '$scope', '$rootScope', '$stateParams', '$window'];
+  HeaderController.$inject = ['$injector', '$scope', '$rootScope', '$stateParams', '$window', '$state'];
 
-  function HeaderController($injector, $scope, $rootScope, $stateParams, $window) {
+  function HeaderController($injector, $scope, $rootScope, $stateParams, $window, $state) {
     this.$scope = $scope;
     this.$rootScope = $rootScope;
     this.$stateParams = $stateParams;
     this.$window = $window;
+    this.$state = $state;
     this.likesService = $injector.get('likesService');
     this.filterService = $injector.get('filterService');
     this.cartService = $injector.get('cartService');
@@ -15,6 +16,13 @@ HeaderController = (function() {
   }
 
   HeaderController.prototype.init = function() {
+    if (this.$state.is('home')) {
+      angular.element('body').addClass('nav_active');
+      angular.element('.main_menu').removeClass('m-hide-left');
+    } else {
+      angular.element('body').removeClass('nav_active');
+      angular.element('.main_menu').addClass('m-hide-left');
+    }
     this.$scope.likesCount = (function(_this) {
       return function() {
         return _this.likesService.likesLength();
