@@ -1,19 +1,22 @@
 var FilterController;
 
 FilterController = (function() {
-  FilterController.$inject = ['$injector', '$scope', '$rootScope', '$stateParams'];
+  FilterController.$inject = ['$injector', '$scope', '$rootScope', '$state'];
 
-  function FilterController($injector, $scope, $rootScope, $stateParams) {
+  function FilterController($injector, $scope, $rootScope, $state) {
     this.$scope = $scope;
     this.$rootScope = $rootScope;
+    this.$state = $state;
     this.filterService = $injector.get('filterService');
     this.filterLocal = this.filterService.filterGet();
     this.init();
   }
 
   FilterController.prototype.init = function() {
-    this.$rootScope.title = 'Фильтр';
-    this.$rootScope.filter = true;
+    if (this.$state.is('filter')) {
+      this.$rootScope.title = 'Фильтр';
+      this.$rootScope.filter = true;
+    }
     this.$scope.filterSettings = this.filterLocal;
     return this.$scope.$on('filterAccept', (function(_this) {
       return function() {

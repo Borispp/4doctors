@@ -1,15 +1,18 @@
 class FilterController
-	@$inject = ['$injector', '$scope', '$rootScope', '$stateParams']
+	@$inject = ['$injector', '$scope', '$rootScope', '$state']
 
-	constructor: ($injector, @$scope, @$rootScope, $stateParams) ->
+	constructor: ($injector, @$scope, @$rootScope, @$state) ->
 		@filterService = $injector.get 'filterService'
 		@filterLocal = @filterService.filterGet()
 		@init()
 
 	init: ->
-		@$rootScope.title = 'Фильтр'
-		@$rootScope.filter = true
 
+		# Dirty. TODO: this things in routes
+		if @$state.is('filter')
+			@$rootScope.title = 'Фильтр'
+			@$rootScope.filter = true
+			
 		# Set Settings
 		@$scope.filterSettings = @filterLocal
 
