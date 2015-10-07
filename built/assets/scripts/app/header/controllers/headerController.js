@@ -19,9 +19,14 @@ HeaderController = (function() {
     if (this.$state.is('home')) {
       angular.element('body').addClass('nav_active');
       angular.element('.main_menu').removeClass('m-hide-left');
+      angular.element('.main_menu').removeClass('left_nav');
+      setTimeout((function() {
+        angular.element('.main_menu').addClass('left_nav');
+      }), 100);
     } else {
       angular.element('body').removeClass('nav_active');
       angular.element('.main_menu').addClass('m-hide-left');
+      angular.element('.main_menu').addClass('left_nav');
     }
     this.$scope.likesCount = (function(_this) {
       return function() {

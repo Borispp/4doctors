@@ -12,9 +12,16 @@ class HeaderController
 		if @$state.is('home')
 			angular.element('body').addClass('nav_active')
 			angular.element('.main_menu').removeClass('m-hide-left')
+			angular.element('.main_menu').removeClass('left_nav')
+
+			setTimeout (->
+			  angular.element('.main_menu').addClass('left_nav')
+			  return
+			), 100
 		else
 			angular.element('body').removeClass('nav_active')
 			angular.element('.main_menu').addClass('m-hide-left')
+			angular.element('.main_menu').addClass('left_nav')
 
 		@$scope.likesCount = => @likesService.likesLength()
 		@$scope.cartCount = => @cartService.cartLength()
