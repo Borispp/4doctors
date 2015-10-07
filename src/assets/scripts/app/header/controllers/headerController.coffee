@@ -13,6 +13,11 @@ class HeaderController
 			angular.element('body').addClass('nav_active')
 			angular.element('.main_menu').removeClass('m-hide-left')
 			angular.element('.main_menu').removeClass('left_nav')
+
+			setTimeout (->
+			  angular.element('.main_menu').addClass('left_nav')
+			  return
+			), 100
 		else
 			angular.element('body').removeClass('nav_active')
 			angular.element('.main_menu').addClass('m-hide-left')
@@ -20,6 +25,9 @@ class HeaderController
 
 		@$scope.likesCount = => @likesService.likesLength()
 		@$scope.cartCount = => @cartService.cartLength()
+		@$rootScope.$on '$stateChangeSuccess', (ev, to, toParams, from, fromParams) =>
+		  @$rootScope.previousState = from.name
+		  @$rootScope.currentState = to.name
 
 	back: ->
 		if @$rootScope.previousState?

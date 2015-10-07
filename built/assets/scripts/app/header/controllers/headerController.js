@@ -20,6 +20,9 @@ HeaderController = (function() {
       angular.element('body').addClass('nav_active');
       angular.element('.main_menu').removeClass('m-hide-left');
       angular.element('.main_menu').removeClass('left_nav');
+      setTimeout((function() {
+        angular.element('.main_menu').addClass('left_nav');
+      }), 100);
     } else {
       angular.element('body').removeClass('nav_active');
       angular.element('.main_menu').addClass('m-hide-left');
@@ -30,11 +33,17 @@ HeaderController = (function() {
         return _this.likesService.likesLength();
       };
     })(this);
-    return this.$scope.cartCount = (function(_this) {
+    this.$scope.cartCount = (function(_this) {
       return function() {
         return _this.cartService.cartLength();
       };
     })(this);
+    return this.$rootScope.$on('$stateChangeSuccess', (function(_this) {
+      return function(ev, to, toParams, from, fromParams) {
+        _this.$rootScope.previousState = from.name;
+        return _this.$rootScope.currentState = to.name;
+      };
+    })(this));
   };
 
   HeaderController.prototype.back = function() {
