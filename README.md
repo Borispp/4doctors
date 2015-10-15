@@ -1,4 +1,4 @@
-Front-end automated boilerplate
+Front-end automated boilerplate.
 ====================
 Автоматизированный шаблон для быстрого старта front-end разработки
 
