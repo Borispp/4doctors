@@ -1496,7 +1496,8 @@ header#main_header .cart {
   height: 48px;
   line-height: 52px;
   text-align: center;
-  color: #fff;
+  color: #885b03;
+  text-shadow: 0 1px 1px rgba(255,255,255,0.5);
   font-size: 16px;
   text-transform: uppercase;
   text-decoration: none;
